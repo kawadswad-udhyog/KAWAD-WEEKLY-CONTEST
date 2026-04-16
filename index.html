@@ -17,26 +17,22 @@ body {
     background-attachment: fixed;
 }
 
-/* HEADER STICKY */
+/* HEADER */
 header {
     position: sticky;
     top: 0;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.95);
     padding: 10px;
     text-align: center;
     z-index: 1000;
 }
 
-img.logo {
-    width: 80px;
-}
-
 /* SECTION */
 section {
-    padding: 50px 20px;
+    padding: 45px 20px;
     text-align: center;
-    background: rgba(255,255,255,0.9);
-    margin: 15px;
+    background: rgba(255,255,255,0.92);
+    margin: 12px;
     border-radius: 14px;
 }
 
@@ -57,18 +53,23 @@ section {
     margin: 10px;
     font-weight: 600;
     font-size: 18px;
-    transition: 0.3s;
 }
 
 .btn:hover {
     transform: scale(1.05);
-    background: #e68900;
 }
 
 /* TEXT */
 h1 { font-weight: 700; }
 h2 { font-size: 24px; }
 p { font-size: 16px; }
+
+/* STRIP */
+.strip {
+    background: #fff3b0;
+    padding: 15px;
+    font-weight: 600;
+}
 
 /* CARDS */
 .cards {
@@ -79,10 +80,9 @@ p { font-size: 16px; }
 }
 
 .card {
-    padding: 22px;
+    padding: 20px;
     border-radius: 12px;
     width: 250px;
-    font-weight: 500;
 }
 
 /* PRODUCT COLORS */
@@ -95,99 +95,74 @@ p { font-size: 16px; }
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
 }
 
 .mascots img {
-    width: 180px;
-    animation: bounce 2s infinite ease-in-out;
+    width: 160px;
+    animation: bounce 2s infinite;
 }
 
-/* SOCIAL BUTTONS */
-.insta {
-    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-}
+/* SOCIAL */
+.insta { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
+.youtube { background:#ff0000; }
 
-.youtube {
-    background: #ff0000;
-}
-
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
 .whatsapp-btn {
-    display: inline-block;
-    background: #25D366;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    margin: 5px;
+    background:#25D366;
+    color:white;
+    padding:10px 18px;
+    border-radius:25px;
+    text-decoration:none;
+    display:inline-block;
+    margin:5px;
 }
 
-/* FLOAT BUTTON */
 .whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    padding: 14px 16px;
-    border-radius: 50%;
-    font-size: 20px;
-    text-decoration: none;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:14px;
+    border-radius:50%;
+    text-decoration:none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-    <img src="logo.png" class="logo">
     <h2>Kawad Swad</h2>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-    <h1>Win Free Papad Every Week</h1>
-    <p>Join Kawad Weekly Contest Now</p>
+    <h1>Win Free Papad Every Week 🎁</h1>
+    <p>Taste That Brings Everyone Together</p>
+    <p><b>Limited Entries – Join Now</b></p>
 
     <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header">
         Enter Contest Now
     </a>
-
-    <p>Winner announced every Sunday</p>
 </section>
+
+<!-- STRIP -->
+<div class="strip">
+    📦 Order Now on WhatsApp | ⚡ Quick Response
+</div>
 
 <!-- TRUST -->
 <section>
     <h2>Why Choose Us</h2>
-    <p>Trusted by local customers</p>
-    <p>Consistent taste and quality</p>
-    <p>Prepared with care and hygiene</p>
-</section>
-
-<!-- ENTRY -->
-<section>
-    <h2>How to Participate</h2>
-    <div class="cards">
-        <div class="card">Buy Papad</div>
-        <div class="card">Share Feedback</div>
-        <div class="card">Follow Us</div>
-    </div>
-</section>
-
-<!-- MASCOTS -->
-<section class="mascots">
-    <h2>Our Mascots</h2>
-    <img src="mascot1.png">
-    <img src="mascot2.png">
-    <img src="mascot3.png">
+    <p>✔ Trusted by Families</p>
+    <p>✔ Consistent Taste</p>
+    <p>✔ Quality Ingredients</p>
 </section>
 
 <!-- PRODUCTS -->
@@ -197,29 +172,41 @@ p { font-size: 16px; }
     <div class="cards">
         <div class="card moong">
             <h3>Moong Papad</h3>
-            <p>Green Chilli</p>
-            <p>Jeera</p>
-            <p>Kasuri Methi</p>
-            <p>Garlic</p>
+            <p>Crispy | Light | Daily Use</p>
         </div>
 
         <div class="card chana">
             <h3>Chana Papad</h3>
-            <p>Khata Meetha</p>
-            <p>Garlic</p>
-            <p>Punjabi</p>
+            <p>Spicy | Tasty | Crunchy</p>
         </div>
 
         <div class="card urad">
             <h3>Urad Papad</h3>
-            <p>Garlic</p>
+            <p>Classic | Strong Taste</p>
         </div>
     </div>
 </section>
 
+<!-- MASCOTS -->
+<section class="mascots">
+    <img src="mascot1.png">
+    <img src="mascot2.png">
+    <img src="mascot3.png">
+</section>
+
+<!-- CTA MID -->
+<section>
+    <h2>Limited Weekly Winners</h2>
+    <p>Don’t Miss Your Chance</p>
+
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header">
+        Join Contest Now
+    </a>
+</section>
+
 <!-- SHOP -->
 <section>
-    <h2>Shop Online</h2>
+    <h2>Shop Now</h2>
 
     <a class="btn" href="https://www.amazon.in/l/27943762031?me=ACMM6YLMRPEH1&tag=ShopReferral_802606d2-287d-46fe-a336-1452b0c67cad&ref=sf_seller_app_share_new_ls_srb">Amazon</a>
 
@@ -228,10 +215,10 @@ p { font-size: 16px; }
 
 <!-- CONTACT -->
 <section>
-    <h2>Contact</h2>
+    <h2>Order Now on WhatsApp</h2>
 
-    <a class="whatsapp-btn" href="https://wa.me/919630976867">WhatsApp 9630976867</a>
-    <a class="whatsapp-btn" href="https://wa.me/919630176867">WhatsApp 9630176867</a>
+    <a class="whatsapp-btn" href="https://wa.me/919630976867">9630976867</a>
+    <a class="whatsapp-btn" href="https://wa.me/919630176867">9630176867</a>
 
     <p>Info.av.kkswad@gmail.com</p>
 </section>
@@ -244,23 +231,12 @@ p { font-size: 16px; }
     <a class="btn youtube" href="https://youtube.com/@kawadswadudhyog?si=w-cwkhiCzHOsUiCZ">YouTube</a>
 </section>
 
-<!-- CTA -->
+<!-- FINAL CTA -->
 <section>
     <h2>Join Now</h2>
     <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header">
         Enter Contest Now
     </a>
-</section>
-
-<!-- FEEDBACK -->
-<section>
-    <h2>Feedback</h2>
-    <a class="btn" href="mailto:Info.av.kkswad@gmail.com?subject=Feedback">Send Feedback</a>
-</section>
-
-<!-- FOOTER -->
-<section style="background:#2e7d32; color:white;">
-    © 2026 Kawad Swad
 </section>
 
 <!-- FLOAT -->
