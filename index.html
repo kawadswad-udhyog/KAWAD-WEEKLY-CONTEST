@@ -11,105 +11,97 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-image: url('bg-new.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: #fff8e7;
 }
 
 /* HEADER */
 header {
     position: sticky;
     top: 0;
-    background: rgba(255,255,255,0.95);
+    background: white;
     padding: 10px;
     text-align: center;
-    z-index: 1000;
-}
-
-/* SECTION */
-section {
-    padding: 45px 20px;
-    text-align: center;
-    background: rgba(255,255,255,0.92);
-    margin: 12px;
-    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 /* HERO */
 .hero {
-    background: linear-gradient(to right, #2e7d32, #66bb6a);
+    padding: 60px 20px;
+    background: linear-gradient(135deg,#2e7d32,#66bb6a);
     color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 28px;
+}
+
+.hero p {
+    font-size: 16px;
 }
 
 /* BUTTON */
 .btn {
     background: #ff9800;
     color: white;
-    padding: 16px 35px;
-    text-decoration: none;
+    padding: 14px 30px;
     border-radius: 30px;
+    text-decoration: none;
     display: inline-block;
-    margin: 10px;
+    margin-top: 15px;
     font-weight: 600;
-    font-size: 18px;
+    transition: 0.3s;
 }
 
 .btn:hover {
     transform: scale(1.05);
 }
 
-/* TEXT */
-h1 { font-weight: 700; }
-h2 { font-size: 24px; }
-p { font-size: 16px; }
+/* SECTION */
+section {
+    padding: 40px 15px;
+    text-align: center;
+}
 
 /* STRIP */
 .strip {
-    background: #fff3b0;
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
     padding: 15px;
+}
+
+.strip div {
+    background: #fff3b0;
+    padding: 10px 15px;
+    border-radius: 20px;
     font-weight: 600;
 }
 
-/* CARDS */
-.cards {
+/* PRODUCTS */
+.products {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    overflow-x: auto;
+    gap: 15px;
 }
 
-.card {
-    padding: 20px;
-    border-radius: 12px;
-    width: 250px;
+.product {
+    min-width: 220px;
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* PRODUCT COLORS */
-.moong { background: #d0f0c0; }
-.chana { background: #fff3b0; }
-.urad { background: #f2f2f2; }
-
-/* MASCOTS */
-.mascots {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+/* TAG */
+.tag {
+    display: inline-block;
+    background: #2e7d32;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
 }
-
-@keyframes bounce {
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-}
-
-.mascots img {
-    width: 160px;
-    animation: bounce 2s infinite;
-}
-
-/* SOCIAL */
-.insta { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
-.youtube { background:#ff0000; }
 
 /* WHATSAPP */
 .whatsapp-btn {
@@ -122,6 +114,7 @@ p { font-size: 16px; }
     margin:5px;
 }
 
+/* FLOAT */
 .whatsapp-float {
     position:fixed;
     bottom:20px;
@@ -130,7 +123,14 @@ p { font-size: 16px; }
     color:white;
     padding:14px;
     border-radius:50%;
-    text-decoration:none;
+}
+
+/* FOOTER */
+footer {
+    background:#2e7d32;
+    color:white;
+    padding:20px;
+    text-align:center;
 }
 </style>
 </head>
@@ -142,80 +142,76 @@ p { font-size: 16px; }
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<div class="hero">
     <h1>Win Free Papad Every Week 🎁</h1>
-    <p>Taste That Brings Everyone Together</p>
+    <p>Swad Bhara Safar</p>
     <p><b>Limited Entries – Join Now</b></p>
 
     <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header">
-        Enter Contest Now
+        Enter Contest
     </a>
-</section>
+</div>
 
 <!-- STRIP -->
 <div class="strip">
-    📦 Order Now on WhatsApp | ⚡ Quick Response
+    <div>📦 Order on WhatsApp</div>
+    <div>⚡ Fast Response</div>
+    <div>🔥 Trending</div>
 </div>
-
-<!-- TRUST -->
-<section>
-    <h2>Why Choose Us</h2>
-    <p>✔ Trusted by Families</p>
-    <p>✔ Consistent Taste</p>
-    <p>✔ Quality Ingredients</p>
-</section>
 
 <!-- PRODUCTS -->
 <section>
     <h2>Our Papad</h2>
 
-    <div class="cards">
-        <div class="card moong">
+    <div class="products">
+
+        <div class="product">
+            <span class="tag">Moong</span>
             <h3>Moong Papad</h3>
-            <p>Crispy | Light | Daily Use</p>
+            <p>Light | Crispy | Daily Snack</p>
         </div>
 
-        <div class="card chana">
+        <div class="product">
+            <span class="tag">Chana</span>
             <h3>Chana Papad</h3>
-            <p>Spicy | Tasty | Crunchy</p>
+            <p>Spicy | Crunchy | Tasty</p>
         </div>
 
-        <div class="card urad">
+        <div class="product">
+            <span class="tag">Urad</span>
             <h3>Urad Papad</h3>
-            <p>Classic | Strong Taste</p>
+            <p>Classic | Strong Flavor</p>
         </div>
+
     </div>
 </section>
 
-<!-- MASCOTS -->
-<section class="mascots">
-    <img src="mascot1.png">
-    <img src="mascot2.png">
-    <img src="mascot3.png">
+<!-- WHY -->
+<section>
+    <h2>Why Kawad Swad</h2>
+    <p>Trusted by families</p>
+    <p>Consistent taste</p>
+    <p>Quality ingredients</p>
 </section>
 
-<!-- CTA MID -->
+<!-- HOW -->
 <section>
-    <h2>Limited Weekly Winners</h2>
-    <p>Don’t Miss Your Chance</p>
+    <h2>How It Works</h2>
+    <p>Buy → Feedback → Join → Win</p>
+</section>
+
+<!-- CTA -->
+<section>
+    <h2>Don’t Miss Your Chance</h2>
 
     <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header">
-        Join Contest Now
+        Join Now
     </a>
-</section>
-
-<!-- SHOP -->
-<section>
-    <h2>Shop Now</h2>
-
-    <a class="btn" href="https://www.amazon.in/l/27943762031?me=ACMM6YLMRPEH1&tag=ShopReferral_802606d2-287d-46fe-a336-1452b0c67cad&ref=sf_seller_app_share_new_ls_srb">Amazon</a>
-
-    <a class="btn" href="https://meesho.com/papad-combo-pack-of-2-moong--chana--homemade-type-jain-papad--crispy--fresh/p/er636t?_ms=1.2">Meesho</a>
 </section>
 
 <!-- CONTACT -->
 <section>
-    <h2>Order Now on WhatsApp</h2>
+    <h2>Order on WhatsApp</h2>
 
     <a class="whatsapp-btn" href="https://wa.me/919630976867">9630976867</a>
     <a class="whatsapp-btn" href="https://wa.me/919630176867">9630176867</a>
@@ -227,19 +223,14 @@ p { font-size: 16px; }
 <section>
     <h2>Follow Us</h2>
 
-    <a class="btn insta" href="https://www.instagram.com/kawadswad?igsh=MWx5emVieXY3dzRtZw==">Instagram</a>
-    <a class="btn youtube" href="https://youtube.com/@kawadswadudhyog?si=w-cwkhiCzHOsUiCZ">YouTube</a>
+    <a class="btn" href="https://www.instagram.com/kawadswad?igsh=MWx5emVieXY3dzRtZw==">Instagram</a>
+    <a class="btn" href="https://youtube.com/@kawadswadudhyog?si=w-cwkhiCzHOsUiCZ">YouTube</a>
 </section>
 
-<!-- FINAL CTA -->
-<section>
-    <h2>Join Now</h2>
-    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header">
-        Enter Contest Now
-    </a>
-</section>
+<footer>
+    © 2026 Kawad Swad
+</footer>
 
-<!-- FLOAT -->
 <a href="https://wa.me/919630976867" class="whatsapp-float">💬</a>
 
 </body>
