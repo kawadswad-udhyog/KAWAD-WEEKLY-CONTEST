@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kawad Swad</title>
+<title>Kawad Swad Contest</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: #fff8e7;
+    background: linear-gradient(135deg,#fff176,#fff8e7);
 }
 
 /* HEADER */
@@ -19,154 +19,107 @@ body {
     position: sticky;
     top: 0;
     background: white;
-    padding: 10px 15px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
 }
 
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo {
-    width: 40px;
-}
-
-.brand {
-    font-weight: 600;
-}
-
-.header-right {
-    display: flex;
-    gap: 10px;
-}
-
-.nav-btn {
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 20px;
-    background: #25D366;
-    color: white;
-    font-size: 13px;
-}
-
-.nav-btn.primary {
-    background: #ff9800;
-}
+.logo { width: 40px; }
 
 /* HERO */
 .hero {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     padding: 50px 20px;
-    background: linear-gradient(135deg,#1b5e20,#43a047);
+}
+
+.hero h1 {
+    font-size: 26px;
+}
+
+.spin-btn {
+    background: #ff5722;
     color: white;
+    padding: 18px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
 }
 
-.hero-text {
-    flex: 1;
-    min-width: 250px;
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
 }
 
-.hero img {
-    width: 160px;
-}
-
-/* BUTTON */
-.btn {
-    background: #ff9800;
-    color: white;
-    padding: 14px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 15px;
-    font-weight: 600;
-}
-
-/* STRIP */
-.strip {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 15px;
-}
-
-.strip div {
-    background: #fff3b0;
-    padding: 10px 15px;
-    border-radius: 20px;
+/* RESULT BOX */
+.result {
+    display: none;
+    margin-top: 20px;
+    font-size: 18px;
     font-weight: 600;
 }
 
 /* SECTION */
 section {
-    padding: 40px 20px;
+    padding: 30px 20px;
     text-align: center;
 }
 
-/* PRODUCTS */
-.products {
+/* REWARD */
+.rewards div {
+    background: #fff3b0;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 10px;
+}
+
+/* STEPS */
+.steps {
     display: flex;
     overflow-x: auto;
-    gap: 15px;
+    gap: 10px;
 }
 
-.product {
-    min-width: 220px;
-    background: white;
-    border-radius: 15px;
+.step {
+    min-width: 150px;
+    background: #e8f5e9;
     padding: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.tag {
-    background: #1b5e20;
-    color: white;
-    padding: 5px 10px;
     border-radius: 10px;
-    font-size: 12px;
 }
 
-/* AMAZON + MEESHO */
-.amazon { background: #ff9900; }
-.meesho { background: #9c27b0; }
+/* MASCOT */
+.mascot {
+    width: 120px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
 
 /* WHATSAPP */
 .whatsapp-btn {
     background:#25D366;
     color:white;
-    padding:10px 18px;
+    padding:12px 20px;
     border-radius:25px;
     text-decoration:none;
     display:inline-block;
-    margin:5px;
 }
 
+/* FLOAT */
 .whatsapp-float {
     position:fixed;
     bottom:20px;
     right:20px;
     background:#25D366;
     color:white;
-    padding:14px;
+    padding:15px;
     border-radius:50%;
-    text-decoration:none;
-}
-
-/* FOOTER */
-footer {
-    background:#1b5e20;
-    color:white;
-    padding:20px;
-    text-align:center;
 }
 </style>
 </head>
@@ -174,84 +127,52 @@ footer {
 <body>
 
 <!-- HEADER -->
-<header class="header">
-    <div class="header-left">
-        <img src="logo.png" class="logo">
-        <span class="brand">Kawad Swad</span>
-    </div>
+<div class="header">
+    <img src="logo.png" class="logo">
+    <b>Kawad Swad</b>
+</div>
 
-    <div class="header-right">
-        <a href="https://wa.me/919630976867" class="nav-btn">WhatsApp</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header" class="nav-btn primary">Join</a>
-    </div>
-</header>
-
-<!-- HERO -->
+<!-- HERO GAME -->
 <div class="hero">
-    <div class="hero-text">
-        <h1>Win Free Papad Every Week</h1>
-        <p>Swad Bhara Safar</p>
-        <p><b>Limited Entries – Join Now</b></p>
+    <h1>🎁 Spin & Win Papad</h1>
+    <p>Tap below to try your luck</p>
 
-        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header">
-            Enter Contest
-        </a>
-    </div>
+    <button class="spin-btn" onclick="spinGame()">SPIN NOW</button>
 
-    <img src="mascot1.png">
+    <div class="result" id="result"></div>
+
+    <br><br>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header" class="whatsapp-btn">
+        Enter Contest
+    </a>
 </div>
 
-<!-- STRIP -->
-<div class="strip">
-    <div>Order on WhatsApp</div>
-    <div>Fast Response</div>
-    <div>Trending Product</div>
-</div>
-
-<!-- PRODUCTS -->
+<!-- REWARDS -->
 <section>
-    <h2>Our Papad</h2>
-
-    <div class="products">
-        <div class="product">
-            <span class="tag">Moong</span>
-            <h3>Moong Papad</h3>
-            <p>Light | Crispy</p>
-        </div>
-
-        <div class="product">
-            <span class="tag">Chana</span>
-            <h3>Chana Papad</h3>
-            <p>Spicy | Crunchy</p>
-        </div>
-
-        <div class="product">
-            <span class="tag">Urad</span>
-            <h3>Urad Papad</h3>
-            <p>Classic Taste</p>
-        </div>
+    <h2>🎁 What You Win</h2>
+    <div class="rewards">
+        <div>Free Papad Pack</div>
+        <div>Surprise Gift</div>
+        <div>Special Discount</div>
     </div>
 </section>
 
-<!-- BUY -->
+<!-- HOW -->
 <section>
-    <h2>Buy Online</h2>
-
-    <a class="btn amazon" href="https://www.amazon.in/l/27943762031?me=ACMM6YLMRPEH1&tag=ShopReferral_802606d2-287d-46fe-a336-1452b0c67cad&ref=sf_seller_app_share_new_ls_srb">
-        Amazon
-    </a>
-
-    <a class="btn meesho" href="https://meesho.com/papad-combo-pack-of-2-moong--chana--homemade-type-jain-papad--crispy--fresh/p/er636t?_ms=1.2">
-        Meesho
-    </a>
+    <h2>How to Enter</h2>
+    <div class="steps">
+        <div class="step">Buy Papad</div>
+        <div class="step">Give Feedback</div>
+        <div class="step">Join Contest</div>
+        <div class="step">Win Weekly</div>
+    </div>
 </section>
 
-<!-- WHY -->
+<!-- MASCOT -->
 <section>
-    <h2>Why Kawad Swad</h2>
-    <p>Trusted by families</p>
-    <p>Consistent taste</p>
-    <p>Quality ingredients</p>
+    <img src="mascot1.png" class="mascot">
+    <p>Chotu Papad says: Try your luck!</p>
 </section>
 
 <!-- CONTACT -->
@@ -260,24 +181,34 @@ footer {
 
     <a class="whatsapp-btn" href="https://wa.me/919630976867">9630976867</a>
     <a class="whatsapp-btn" href="https://wa.me/919630176867">9630176867</a>
-
-    <p>Info.av.kkswad@gmail.com</p>
 </section>
 
 <!-- SOCIAL -->
 <section>
     <h2>Follow Us</h2>
 
-    <a class="btn" href="https://www.instagram.com/kawadswad?igsh=MWx5emVieXY3dzRtZw==">Instagram</a>
-    <a class="btn" href="https://youtube.com/@kawadswadudhyog?si=w-cwkhiCzHOsUiCZ">YouTube</a>
+    <a class="whatsapp-btn" href="https://www.instagram.com/kawadswad?igsh=MWx5emVieXY3dzRtZw==">Instagram</a>
+    <a class="whatsapp-btn" href="https://youtube.com/@kawadswadudhyog?si=w-cwkhiCzHOsUiCZ">YouTube</a>
 </section>
-
-<footer>
-    © 2026 Kawad Swad
-</footer>
 
 <!-- FLOAT -->
 <a href="https://wa.me/919630976867" class="whatsapp-float">💬</a>
+
+<script>
+function spinGame() {
+    let results = [
+        "🎉 You are eligible for reward!",
+        "🔥 You are selected for this week!",
+        "🎁 Lucky Entry Confirmed!"
+    ];
+
+    let random = results[Math.floor(Math.random() * results.length)];
+
+    let resultBox = document.getElementById("result");
+    resultBox.style.display = "block";
+    resultBox.innerHTML = random;
+}
+</script>
 
 </body>
 </html>
