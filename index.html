@@ -12,7 +12,6 @@ body {
     background-image: url('bg-new.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
@@ -35,13 +34,18 @@ section {
 .btn {
     background: #ff9800;
     color: white;
-    padding: 12px 25px;
+    padding: 16px 35px;
     text-decoration: none;
     border-radius: 25px;
     display: inline-block;
     margin: 10px;
     font-weight: bold;
+    font-size: 18px;
 }
+
+/* TEXT SIZE */
+p { font-size: 16px; }
+h2 { font-size: 22px; }
 
 /* CARDS */
 .cards {
@@ -77,12 +81,11 @@ img.logo {
 
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-12px); }
 }
 
 .mascots img {
     width: 180px;
-    max-width: 45%;
     animation: bounce 2s infinite ease-in-out;
 }
 
@@ -90,7 +93,20 @@ img.logo {
 .mascots img:nth-child(2) { animation-delay: 0.3s; }
 .mascots img:nth-child(3) { animation-delay: 0.6s; }
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 14px 16px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* SHOP BUTTON */
 .whatsapp-btn {
     display: inline-block;
     background: #25D366;
@@ -115,12 +131,22 @@ img.logo {
 
 <!-- HERO -->
 <section class="hero">
-    <h1>KAWAD WEEKLY CONTEST</h1>
-    <p>Buy papad and get a chance to win every week</p>
+    <h1>Win Free Papad Every Week</h1>
+    <p>Join Kawad Weekly Contest Now</p>
 
     <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header" target="_blank">
         Enter Contest Now
     </a>
+
+    <p>Winner announced every Sunday</p>
+</section>
+
+<!-- TRUST -->
+<section>
+    <h2>Why Choose Us</h2>
+    <p>1000+ Happy Customers</p>
+    <p>Fresh Handmade Papad</p>
+    <p>Trusted by Local Families</p>
 </section>
 
 <!-- ENTRY -->
@@ -174,15 +200,6 @@ img.logo {
     </div>
 </section>
 
-<!-- ABOUT -->
-<section>
-    <h2>About Us</h2>
-    <p>
-        We make papad with traditional Nimad taste and purity.  
-        Every papad delivers both flavor and trust.
-    </p>
-</section>
-
 <!-- SHOP -->
 <section>
     <h2>Shop Online</h2>
@@ -221,20 +238,29 @@ img.logo {
 
 </section>
 
+<!-- CTA AGAIN -->
+<section>
+    <h2>Join Now</h2>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header">
+        Enter Contest Now
+    </a>
+</section>
+
 <!-- FEEDBACK -->
 <section>
     <h2>Feedback</h2>
-
     <a class="btn" href="mailto:Info.av.kkswad@gmail.com?subject=Feedback">
         Send Feedback
     </a>
-
 </section>
 
 <!-- FOOTER -->
 <section style="background:#2e7d32; color:white;">
     © 2026 Kawad Swad
 </section>
+
+<!-- FLOAT BUTTON -->
+<a href="https://wa.me/919630976867" class="whatsapp-float">💬</a>
 
 </body>
 </html>
