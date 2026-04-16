@@ -15,52 +15,80 @@ body {
 }
 
 /* HEADER */
-header {
+.header {
     position: sticky;
     top: 0;
     background: white;
-    padding: 10px;
-    text-align: center;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+}
+
+.brand {
+    font-weight: 600;
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #25D366;
+    color: white;
+    font-size: 13px;
+}
+
+.nav-btn.primary {
+    background: #ff9800;
 }
 
 /* HERO */
 .hero {
-    padding: 60px 20px;
-    background: linear-gradient(135deg,#2e7d32,#66bb6a);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg,#1b5e20,#43a047);
     color: white;
-    text-align: center;
 }
 
-.hero h1 {
-    font-size: 28px;
+.hero-text {
+    flex: 1;
+    min-width: 250px;
 }
 
-.hero p {
-    font-size: 16px;
+.hero img {
+    width: 160px;
 }
 
 /* BUTTON */
 .btn {
     background: #ff9800;
     color: white;
-    padding: 14px 30px;
+    padding: 14px 28px;
     border-radius: 30px;
     text-decoration: none;
     display: inline-block;
     margin-top: 15px;
     font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* SECTION */
-section {
-    padding: 40px 15px;
-    text-align: center;
 }
 
 /* STRIP */
@@ -78,6 +106,12 @@ section {
     font-weight: 600;
 }
 
+/* SECTION */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
 /* PRODUCTS */
 .products {
     display: flex;
@@ -93,15 +127,17 @@ section {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* TAG */
 .tag {
-    display: inline-block;
-    background: #2e7d32;
+    background: #1b5e20;
     color: white;
     padding: 5px 10px;
     border-radius: 10px;
     font-size: 12px;
 }
+
+/* AMAZON + MEESHO */
+.amazon { background: #ff9900; }
+.meesho { background: #9c27b0; }
 
 /* WHATSAPP */
 .whatsapp-btn {
@@ -114,7 +150,6 @@ section {
     margin:5px;
 }
 
-/* FLOAT */
 .whatsapp-float {
     position:fixed;
     bottom:20px;
@@ -123,11 +158,12 @@ section {
     color:white;
     padding:14px;
     border-radius:50%;
+    text-decoration:none;
 }
 
 /* FOOTER */
 footer {
-    background:#2e7d32;
+    background:#1b5e20;
     color:white;
     padding:20px;
     text-align:center;
@@ -137,26 +173,39 @@ footer {
 
 <body>
 
-<header>
-    <h2>Kawad Swad</h2>
+<!-- HEADER -->
+<header class="header">
+    <div class="header-left">
+        <img src="logo.png" class="logo">
+        <span class="brand">Kawad Swad</span>
+    </div>
+
+    <div class="header-right">
+        <a href="https://wa.me/919630976867" class="nav-btn">WhatsApp</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header" class="nav-btn primary">Join</a>
+    </div>
 </header>
 
 <!-- HERO -->
 <div class="hero">
-    <h1>Win Free Papad Every Week 🎁</h1>
-    <p>Swad Bhara Safar</p>
-    <p><b>Limited Entries – Join Now</b></p>
+    <div class="hero-text">
+        <h1>Win Free Papad Every Week</h1>
+        <p>Swad Bhara Safar</p>
+        <p><b>Limited Entries – Join Now</b></p>
 
-    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header">
-        Enter Contest
-    </a>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header">
+            Enter Contest
+        </a>
+    </div>
+
+    <img src="mascot1.png">
 </div>
 
 <!-- STRIP -->
 <div class="strip">
-    <div>📦 Order on WhatsApp</div>
-    <div>⚡ Fast Response</div>
-    <div>🔥 Trending</div>
+    <div>Order on WhatsApp</div>
+    <div>Fast Response</div>
+    <div>Trending Product</div>
 </div>
 
 <!-- PRODUCTS -->
@@ -164,26 +213,37 @@ footer {
     <h2>Our Papad</h2>
 
     <div class="products">
-
         <div class="product">
             <span class="tag">Moong</span>
             <h3>Moong Papad</h3>
-            <p>Light | Crispy | Daily Snack</p>
+            <p>Light | Crispy</p>
         </div>
 
         <div class="product">
             <span class="tag">Chana</span>
             <h3>Chana Papad</h3>
-            <p>Spicy | Crunchy | Tasty</p>
+            <p>Spicy | Crunchy</p>
         </div>
 
         <div class="product">
             <span class="tag">Urad</span>
             <h3>Urad Papad</h3>
-            <p>Classic | Strong Flavor</p>
+            <p>Classic Taste</p>
         </div>
-
     </div>
+</section>
+
+<!-- BUY -->
+<section>
+    <h2>Buy Online</h2>
+
+    <a class="btn amazon" href="https://www.amazon.in/l/27943762031?me=ACMM6YLMRPEH1&tag=ShopReferral_802606d2-287d-46fe-a336-1452b0c67cad&ref=sf_seller_app_share_new_ls_srb">
+        Amazon
+    </a>
+
+    <a class="btn meesho" href="https://meesho.com/papad-combo-pack-of-2-moong--chana--homemade-type-jain-papad--crispy--fresh/p/er636t?_ms=1.2">
+        Meesho
+    </a>
 </section>
 
 <!-- WHY -->
@@ -192,21 +252,6 @@ footer {
     <p>Trusted by families</p>
     <p>Consistent taste</p>
     <p>Quality ingredients</p>
-</section>
-
-<!-- HOW -->
-<section>
-    <h2>How It Works</h2>
-    <p>Buy → Feedback → Join → Win</p>
-</section>
-
-<!-- CTA -->
-<section>
-    <h2>Don’t Miss Your Chance</h2>
-
-    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header">
-        Join Now
-    </a>
 </section>
 
 <!-- CONTACT -->
@@ -231,6 +276,7 @@ footer {
     © 2026 Kawad Swad
 </footer>
 
+<!-- FLOAT -->
 <a href="https://wa.me/919630976867" class="whatsapp-float">💬</a>
 
 </body>
