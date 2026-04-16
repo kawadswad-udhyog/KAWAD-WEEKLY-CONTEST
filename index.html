@@ -9,15 +9,27 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: #fff8e7;
+    background: url('bg.png') no-repeat center center fixed;
+    background-size: cover;
     color: #222;
 }
-
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 248, 231, 0.85);
+    z-index: -1;
+}
 section {
     padding: 50px 20px;
     text-align: center;
+    background: rgba(255,255,255,0.6);
+    margin: 10px;
+    border-radius: 12px;
 }
-
 .hero {
     background: linear-gradient(to right, #2e7d32, #66bb6a);
     color: white;
