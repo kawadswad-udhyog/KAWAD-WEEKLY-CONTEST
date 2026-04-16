@@ -1,40 +1,37 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kawad Jain Papad</title>
+<title>Kawad Swad</title>
 
 <style>
 body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
     background-image: url('bg-new.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 248, 231, 0.85);
-    z-index: -1;
-}
+
+/* SECTION */
 section {
     padding: 50px 20px;
     text-align: center;
-    background: rgba(255,255,255,0.6);
-    margin: 10px;
+    background: rgba(255,255,255,0.85);
+    margin: 15px;
     border-radius: 12px;
 }
+
+/* HERO */
 .hero {
     background: linear-gradient(to right, #2e7d32, #66bb6a);
     color: white;
 }
 
+/* BUTTON */
 .btn {
     background: #ff9800;
     color: white;
@@ -43,8 +40,10 @@ section {
     border-radius: 25px;
     display: inline-block;
     margin: 10px;
+    font-weight: bold;
 }
 
+/* CARDS */
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -58,18 +57,49 @@ section {
     width: 250px;
 }
 
+/* PRODUCT COLORS */
 .moong { background: #d0f0c0; }
 .chana { background: #fff3b0; }
 .urad { background: #f2f2f2; }
 
+/* LOGO */
 img.logo {
     width: 120px;
-    margin-bottom: 10px;
+}
+
+/* MASCOTS */
+.mascots {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
 
 .mascots img {
-    width: 100px;
-    margin: 10px;
+    width: 180px;
+    max-width: 45%;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.mascots img:nth-child(1) { animation-delay: 0s; }
+.mascots img:nth-child(2) { animation-delay: 0.3s; }
+.mascots img:nth-child(3) { animation-delay: 0.6s; }
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
 }
 </style>
 </head>
@@ -79,14 +109,14 @@ img.logo {
 <!-- HEADER -->
 <section>
     <img src="logo.png" class="logo">
-    <h1>कवाड़ जैन पापड़</h1>
-    <p>निमाड़ का असली स्वाद</p>
+    <h1>Kawad Swad</h1>
+    <p>Swad Bhara Safar</p>
 </section>
 
 <!-- HERO -->
 <section class="hero">
     <h1>KAWAD WEEKLY CONTEST</h1>
-    <p>पापड़ खरीदें और हर हफ्ते जीतने का मौका पाएं</p>
+    <p>Buy papad and get a chance to win every week</p>
 
     <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header" target="_blank">
         Enter Contest Now
@@ -95,11 +125,11 @@ img.logo {
 
 <!-- ENTRY -->
 <section>
-    <h2>कैसे भाग लें?</h2>
+    <h2>How to Participate</h2>
     <div class="cards">
-        <div class="card">पापड़ खरीदें</div>
-        <div class="card">फीडबैक दें</div>
-        <div class="card">हमें फॉलो करें</div>
+        <div class="card">Buy Papad</div>
+        <div class="card">Give Feedback</div>
+        <div class="card">Follow Us</div>
     </div>
 </section>
 
@@ -113,7 +143,8 @@ img.logo {
 
 <!-- PRODUCTS -->
 <section>
-    <h2>हमारे पापड़</h2>
+    <h2>Our Papad</h2>
+
     <div class="cards">
 
         <div class="card moong">
@@ -145,38 +176,45 @@ img.logo {
 
 <!-- ABOUT -->
 <section>
-    <h2>हमारे बारे में</h2>
+    <h2>About Us</h2>
     <p>
-        निमाड़ की परंपरा और शुद्धता के साथ हम पापड़ बनाते हैं।  
-        हर पापड़ में स्वाद के साथ भरोसा भी मिलता है।
+        We make papad with traditional Nimad taste and purity.  
+        Every papad delivers both flavor and trust.
     </p>
 </section>
 
-<!-- SHOP LINKS -->
+<!-- SHOP -->
 <section>
-    <h2>ऑनलाइन खरीदें</h2>
+    <h2>Shop Online</h2>
 
     <a class="btn" href="https://www.amazon.in/l/27943762031?me=ACMM6YLMRPEH1&tag=ShopReferral_802606d2-287d-46fe-a336-1452b0c67cad&ref=sf_seller_app_share_new_ls_srb" target="_blank">
-        Shop on Amazon
+        Amazon
     </a>
 
     <a class="btn" href="https://meesho.com/papad-combo-pack-of-2-moong--chana--homemade-type-jain-papad--crispy--fresh/p/er636t?_ms=1.2" target="_blank">
-        Shop on Meesho
+        Meesho
     </a>
 
 </section>
 
 <!-- CONTACT -->
 <section>
-    <h2>संपर्क करें</h2>
-    <p>📞 9630976867</p>
-    <p>📞 9630976867</p>
+    <h2>Contact</h2>
+
+    <a class="whatsapp-btn" href="https://wa.me/919630976867" target="_blank">
+        WhatsApp 9630976867
+    </a>
+
+    <a class="whatsapp-btn" href="https://wa.me/919630176867" target="_blank">
+        WhatsApp 9630176867
+    </a>
+
     <p>✉️ Info.av.kkswad@gmail.com</p>
 </section>
 
 <!-- SOCIAL -->
 <section>
-    <h2>हमसे जुड़ें</h2>
+    <h2>Follow Us</h2>
 
     <a class="btn" href="https://www.instagram.com/kawadswad?igsh=MWx5emVieXY3dzRtZw==" target="_blank">Instagram</a>
     <a class="btn" href="https://youtube.com/@kawadswadudhyog?si=w-cwkhiCzHOsUiCZ" target="_blank">YouTube</a>
@@ -185,7 +223,7 @@ img.logo {
 
 <!-- FEEDBACK -->
 <section>
-    <h2>अपना सुझाव दें</h2>
+    <h2>Feedback</h2>
 
     <a class="btn" href="mailto:Info.av.kkswad@gmail.com?subject=Feedback">
         Send Feedback
@@ -195,7 +233,7 @@ img.logo {
 
 <!-- FOOTER -->
 <section style="background:#2e7d32; color:white;">
-    © 2026 Kawad Jain Papad
+    © 2026 Kawad Swad
 </section>
 
 </body>
