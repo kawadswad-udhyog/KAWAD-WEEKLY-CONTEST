@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kawad Jain Papad</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff8e7;
+    color: #222;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+.hero {
+    background: linear-gradient(to right, #2e7d32, #66bb6a);
+    color: white;
+    padding: 80px 20px;
+}
+
+.btn {
+    background: #ff9800;
+    color: white;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e68900;
+    transform: scale(1.05);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 12px;
+    width: 260px;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.moong { background: #d0f0c0; }
+.chana { background: #fff3b0; }
+.urad { background: #f2f2f2; }
+
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer {
+    background: #2e7d32;
+    color: white;
+    padding: 20px;
+}
+
+textarea {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<section>
+    <h1>कवाड़ जैन पापड़</h1>
+    <p>निमाड़ का असली स्वाद</p>
+</section>
+
+<!-- HERO -->
+<section class="hero fade">
+    <h1>KAWAD WEEKLY CONTEST</h1>
+    <p>पापड़ खरीदें और हर हफ्ते जीतने का मौका पाएं</p>
+
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header" target="_blank">
+        Enter Contest Now
+    </a>
+</section>
+
+<!-- ENTRY -->
+<section class="fade">
+    <h2>कैसे भाग लें?</h2>
+
+    <div class="cards">
+        <div class="card">पापड़ खरीदें</div>
+        <div class="card">फीडबैक दें</div>
+        <div class="card">हमें फॉलो करें</div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="fade">
+    <h2>हमारे पापड़</h2>
+
+    <div class="cards">
+
+        <div class="card moong">
+            <h3>Moong Papad</h3>
+            <p>Green Chilli</p>
+            <p>Jeera</p>
+            <p>Kasuri Methi</p>
+            <p>Garlic</p>
+            <p>Punjabi Masala</p>
+            <p>Khata Meetha</p>
+            <p>Pudhina</p>
+        </div>
+
+        <div class="card chana">
+            <h3>Chana Papad</h3>
+            <p>Khata Meetha</p>
+            <p>Garlic</p>
+            <p>Punjabi</p>
+            <p>Tomato</p>
+        </div>
+
+        <div class="card urad">
+            <h3>Urad Papad</h3>
+            <p>Garlic</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="fade">
+    <h2>हमारे बारे में</h2>
+    <p>
+        निमाड़ की परंपरा और शुद्धता के साथ हम पापड़ बनाते हैं।  
+        हर पापड़ में स्वाद के साथ भरोसा भी मिलता है।
+    </p>
+</section>
+
+<!-- CONTACT -->
+<section class="fade">
+    <h2>संपर्क करें</h2>
+    <p>9630176867</p>
+</section>
+
+<!-- SOCIAL -->
+<section class="fade">
+    <h2>हमसे जुड़ें</h2>
+
+    <a class="btn" href="https://www.instagram.com/kawadswad?igsh=MWx5emVieXY3dzRtZw==" target="_blank">Instagram</a>
+    <a class="btn" href="https://youtube.com/@kawadswadudhyog?si=w-cwkhiCzHOsUiCZ" target="_blank">YouTube</a>
+</section>
+
+<!-- FEEDBACK -->
+<section class="fade">
+    <h2>अपना सुझाव दें</h2>
+    <textarea placeholder="आप क्या सुधार चाहते हैं?"></textarea>
+    <br><br>
+    <button class="btn">Submit</button>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 Kawad Jain Papad
+</div>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            el.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
