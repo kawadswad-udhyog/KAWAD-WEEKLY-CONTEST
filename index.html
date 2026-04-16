@@ -5,121 +5,123 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kawad Swad Contest</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg,#fff176,#fff8e7);
+    text-align: center;
 }
 
 /* HEADER */
 .header {
-    position: sticky;
-    top: 0;
-    background: white;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 12px;
+    background: white;
 }
 
-.logo { width: 40px; }
+.logo { width: 45px; }
+
+.brand {
+    font-family: 'Baloo 2';
+    font-size: 20px;
+}
 
 /* HERO */
 .hero {
-    text-align: center;
-    padding: 50px 20px;
+    padding: 20px;
 }
 
 .hero h1 {
-    font-size: 26px;
+    font-family: 'Baloo 2';
 }
 
+/* WHEEL */
+.wheel-container {
+    position: relative;
+    width: 230px;
+    height: 230px;
+    margin: auto;
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#ff9800,#4caf50,#f44336,#2196f3);
+    transition: transform 3s ease-out;
+}
+
+.pointer {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* BUTTON */
 .spin-btn {
     background: #ff5722;
     color: white;
-    padding: 18px 30px;
-    border-radius: 50px;
-    font-size: 18px;
+    padding: 14px 28px;
+    border-radius: 30px;
     border: none;
+    font-size: 16px;
+    margin-top: 15px;
     cursor: pointer;
-    animation: pulse 1.5s infinite;
+    animation: glow 1.5s infinite;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-    100% { transform: scale(1); }
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #ff5722; }
+    50% { box-shadow: 0 0 20px #ff5722; }
+    100% { box-shadow: 0 0 5px #ff5722; }
 }
 
-/* RESULT BOX */
-.result {
-    display: none;
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: 600;
+/* POPUP */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    z-index: 1000;
+    transition: 0.3s;
 }
 
-/* SECTION */
-section {
-    padding: 30px 20px;
-    text-align: center;
+.popup.active {
+    transform: translate(-50%,-50%) scale(1);
 }
 
-/* REWARD */
-.rewards div {
-    background: #fff3b0;
-    padding: 12px;
-    margin: 8px;
-    border-radius: 10px;
+/* CONFETTI */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: red;
+    top: 0;
+    animation: fall 3s linear infinite;
 }
 
-/* STEPS */
-.steps {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-}
-
-.step {
-    min-width: 150px;
-    background: #e8f5e9;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-/* MASCOT */
-.mascot {
-    width: 120px;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
+@keyframes fall {
+    to { transform: translateY(100vh); }
 }
 
 /* WHATSAPP */
 .whatsapp-btn {
     background:#25D366;
     color:white;
-    padding:12px 20px;
+    padding:10px 18px;
     border-radius:25px;
     text-decoration:none;
     display:inline-block;
-}
-
-/* FLOAT */
-.whatsapp-float {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px;
-    border-radius:50%;
+    margin-top: 10px;
 }
 </style>
 </head>
@@ -129,84 +131,72 @@ section {
 <!-- HEADER -->
 <div class="header">
     <img src="logo.png" class="logo">
-    <b>Kawad Swad</b>
+    <div class="brand">Kawad Swad</div>
 </div>
 
-<!-- HERO GAME -->
+<!-- HERO -->
 <div class="hero">
-    <h1>🎁 Spin & Win Papad</h1>
-    <p>Tap below to try your luck</p>
+    <h1>🎡 Spin & Win पापड़</h1>
+    <p>आज ही अपनी किस्मत आजमाओ</p>
 
-    <button class="spin-btn" onclick="spinGame()">SPIN NOW</button>
+    <div class="wheel-container">
+        <div class="pointer">🔻</div>
+        <div class="wheel" id="wheel"></div>
+    </div>
 
-    <div class="result" id="result"></div>
+    <button class="spin-btn" onclick="spin()">SPIN NOW</button>
+</div>
 
-    <br><br>
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <h2 id="popupText"></h2>
 
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header" class="whatsapp-btn">
         Enter Contest
     </a>
 </div>
 
-<!-- REWARDS -->
-<section>
-    <h2>🎁 What You Win</h2>
-    <div class="rewards">
-        <div>Free Papad Pack</div>
-        <div>Surprise Gift</div>
-        <div>Special Discount</div>
-    </div>
-</section>
-
-<!-- HOW -->
-<section>
-    <h2>How to Enter</h2>
-    <div class="steps">
-        <div class="step">Buy Papad</div>
-        <div class="step">Give Feedback</div>
-        <div class="step">Join Contest</div>
-        <div class="step">Win Weekly</div>
-    </div>
-</section>
-
-<!-- MASCOT -->
-<section>
-    <img src="mascot1.png" class="mascot">
-    <p>Chotu Papad says: Try your luck!</p>
-</section>
-
 <!-- CONTACT -->
 <section>
-    <h2>Order on WhatsApp</h2>
-
+    <h3>Order on WhatsApp</h3>
     <a class="whatsapp-btn" href="https://wa.me/919630976867">9630976867</a>
-    <a class="whatsapp-btn" href="https://wa.me/919630176867">9630176867</a>
 </section>
-
-<!-- SOCIAL -->
-<section>
-    <h2>Follow Us</h2>
-
-    <a class="whatsapp-btn" href="https://www.instagram.com/kawadswad?igsh=MWx5emVieXY3dzRtZw==">Instagram</a>
-    <a class="whatsapp-btn" href="https://youtube.com/@kawadswadudhyog?si=w-cwkhiCzHOsUiCZ">YouTube</a>
-</section>
-
-<!-- FLOAT -->
-<a href="https://wa.me/919630976867" class="whatsapp-float">💬</a>
 
 <script>
-function spinGame() {
-    let results = [
-        "🎉 You are eligible for reward!",
-        "🔥 You are selected for this week!",
-        "🎁 Lucky Entry Confirmed!"
-    ];
+function spin() {
+    let wheel = document.getElementById("wheel");
+    let popup = document.getElementById("popup");
+    let text = document.getElementById("popupText");
 
-    let random = results[Math.floor(Math.random() * results.length)];
+    let deg = Math.floor(3600 + Math.random()*360);
+    wheel.style.transform = "rotate("+deg+"deg)";
 
-    let resultBox = document.getElementById("result");
-    resultBox.style.display = "block";
-    resultBox.innerHTML = random;
+    setTimeout(()=>{
+        let msgs = [
+            "🎉 आप जीतने के लिए चुने गए हैं!",
+            "🔥 Lucky Entry मिल गई!",
+            "🎁 Reward Chance Unlock!"
+        ];
+        text.innerHTML = msgs[Math.floor(Math.random()*msgs.length)];
+        popup.classList.add("active");
+        confetti();
+        playSound();
+    },3000);
+}
+
+function confetti(){
+    for(let i=0;i<30;i++){
+        let c = document.createElement("div");
+        c.className="confetti";
+        c.style.left=Math.random()*100+"%";
+        c.style.background=["red","yellow","green","blue"][Math.floor(Math.random()*4)];
+        document.body.appendChild(c);
+    }
+}
+
+function playSound(){
+    let audio = new Audio("https://www.soundjay.com/buttons/sounds/button-3.mp3");
+    audio.play();
 }
 </script>
 
