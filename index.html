@@ -16,81 +16,86 @@
         .animate-float { animation: float 3s ease-in-out infinite; }
         .animate-marquee { animation: marquee 25s linear infinite; }
         @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-        
-        /* Language Toggle Styles */
         .lang-active { background-color: #d97706; color: white; }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="text-gray-800 pb-32 lg:pb-0">
 
     <div class="bg-amber-600 py-2 overflow-hidden text-white font-bold text-xs md:text-sm uppercase tracking-widest">
         <div class="whitespace-nowrap animate-marquee flex gap-10">
             <span>🎉 Swad Bhara Safar | स्वाद भरा सफ़र 🎉</span>
             <span>🔥 Fresh Moong & Chana Daily | ताज़ा मूंग और चना रोज़ाना 🔥</span>
-            <span>🎁 Join the Contest | कॉन्टेस्ट जीतें 🎁</span>
-            <span>✨ Custom Papad Making Services | कस्टम पापड़ मेकिंग ✨</span>
+            <span>🎁 Win Weekly Contest | कॉन्टेस्ट जीतें 🎁</span>
         </div>
     </div>
 
-    <header class="relative px-6 py-8 text-center bg-white border-b border-amber-100">
-        <div class="flex justify-end max-w-6xl mx-auto mb-4">
-            <div class="inline-flex rounded-md shadow-sm bg-gray-100 p-1 text-xs font-bold">
-                <button onclick="setLang('en')" id="btn-en" class="px-4 py-2 rounded-md transition-all">ENGLISH</button>
-                <button onclick="setLang('hi')" id="btn-hi" class="px-4 py-2 rounded-md transition-all lang-active">हिन्दी</button>
+    <header class="relative h-[70vh] md:h-[90vh] w-full overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <iframe class="w-full h-full scale-[2.0]" src="https://www.youtube.com/embed/qRaDhoUG3RQ?autoplay=1&mute=1&loop=1&playlist=qRaDhoUG3RQ&controls=0&showinfo=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6">
+            <div class="flex justify-end mb-8">
+                <div class="inline-flex rounded-md bg-white/20 p-1 text-xs font-bold text-white backdrop-blur-md">
+                    <button onclick="setLang('en')" id="btn-en" class="px-4 py-2 rounded-md transition-all">EN</button>
+                    <button onclick="setLang('hi')" id="btn-hi" class="px-4 py-2 rounded-md transition-all lang-active">HI</button>
+                </div>
+            </div>
+            <img src="logo.png" alt="Kawad Swad" class="mx-auto w-32 md:w-44 mb-6 drop-shadow-2xl">
+            <h1 class="brand-font text-5xl md:text-7xl text-white mb-2 drop-shadow-lg">Kawad Swad Udhyog</h1>
+            <p class="text-xl md:text-2xl text-amber-400 font-bold italic mb-8" id="tagline">"स्वाद भरा सफ़र"</p>
+            <div class="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-bold animate-bounce shadow-2xl">
+                🎯 <span id="scroll-text">नीचे स्क्रॉल करें और जीतें!</span>
             </div>
         </div>
-        
-        <img src="mascot1.png" alt="Mascot" class="hidden lg:block absolute top-20 left-10 w-24 animate-float">
-        <img src="logo.png" alt="Kawad Swad Logo" class="mx-auto w-32 mb-6">
-        <h1 class="brand-font text-5xl md:text-7xl mb-2 gradient-text">Kawad Swad Udhyog</h1>
-        <p class="text-xl md:text-2xl text-amber-800 font-bold italic mb-8 transition-all" id="tagline">"स्वाद भरा सफ़र"</p>
-        
-        <div class="inline-block bg-amber-100 px-6 py-3 rounded-full text-amber-700 font-bold animate-bounce text-sm">
-            🎯 <span id="scroll-text">नीचे स्क्रॉल करें और जीतें!</span>
+
+        <div class="absolute bottom-6 right-6 z-20 opacity-30 hidden md:block">
+            <img src="logo.png" class="w-16 grayscale brightness-200" alt="Watermark">
         </div>
     </header>
 
-    <section class="py-16 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section class="py-20 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div class="order-2 md:order-1">
-            <h2 class="text-3xl md:text-4xl brand-font mb-6 text-amber-900 border-b-4 border-amber-500 inline-block" id="about-title">हमारे बारे में</h2>
-            <p class="text-gray-700 leading-relaxed text-lg mb-6" id="about-p1">
-                <strong>Kawad Swad Udhyog</strong> एक पारिवारिक व्यवसाय है। हम हर दिन ताज़ा पापड़ तैयार करते हैं। हम सिर्फ एक फैक्ट्री नहीं हैं; हम एक स्थानीय यूनिट हैं जहाँ तैयारी, मिक्सिंग और सुखाने का सारा काम रोज़ाना हमारी अपनी निगरानी में होता है।
+            <h2 class="text-4xl brand-font mb-6 text-amber-900 border-b-4 border-amber-500 inline-block" id="about-title">हमारे बारे में</h2>
+            <p class="text-gray-700 leading-relaxed text-lg mb-8" id="about-p1">
+                Kawad Swad Udhyog एक पारिवारिक व्यवसाय है। हम हर दिन ताज़ा पापड़ तैयार करते हैं। हम सिर्फ एक फैक्ट्री नहीं हैं; हम एक स्थानीय यूनिट हैं जहाँ तैयारी, मिक्सिंग और सुखाने का सारा काम रोज़ाना हमारी अपनी निगरानी में होता है।
             </p>
-            <div class="grid grid-cols-1 gap-4 mb-8">
-                <div class="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm border border-amber-50">
-                    <span class="text-green-600 font-bold">✓</span>
-                    <p class="text-sm font-semibold" id="feat1">रोज़ाना ताज़ा उत्पादन (Daily Fresh)</p>
-                </div>
-                <div class="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm border border-amber-50">
-                    <span class="text-green-600 font-bold">✓</span>
-                    <p class="text-sm font-semibold" id="feat2">साफ़-सफाई का पूरा ध्यान (Hygienic)</p>
-                </div>
-                <div class="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm border border-amber-50">
-                    <span class="text-green-600 font-bold">✓</span>
-                    <p class="text-sm font-semibold" id="feat3">कस्टम पापड़ मेकिंग सेवा (Custom Service)</p>
-                </div>
-            </div>
-            <div class="p-6 bg-amber-900 rounded-2xl text-white italic text-lg shadow-xl" id="mission-box">
-                "हमारा लक्ष्य हर घर तक शुद्ध, ताज़ा और स्वादिष्ट पापड़ पहुँचाना है।"
+            <div class="p-6 bg-amber-900 rounded-3xl text-white shadow-2xl relative overflow-hidden group">
+                <p class="italic text-lg z-10 relative" id="mission-box">"हमारा लक्ष्य हर घर तक शुद्ध, ताज़ा और स्वादिष्ट पापड़ पहुँचाना है।"</p>
+                <div class="absolute -right-4 -bottom-4 opacity-20 text-6xl group-hover:rotate-12 transition-transform">😋</div>
             </div>
         </div>
         <div class="order-1 md:order-2 bg-amber-100 rounded-[3rem] p-10 relative">
-            <img src="mascot3.png" alt="Mascot" class="w-56 mx-auto animate-float">
-            <div class="mt-8 bg-white p-6 rounded-2xl shadow-inner text-center">
-                <h3 class="font-bold text-xl mb-2 text-amber-900" id="time-title">संपर्क का समय</h3>
-                <p class="text-sm font-bold text-gray-600 mb-1">सोमवार - शनिवार</p>
-                <p class="text-lg font-black text-amber-700">9:00 AM - 1:00 PM</p>
-                <p class="text-lg font-black text-amber-700">3:00 PM - 7:00 PM</p>
-                <p class="mt-4 text-xs font-bold text-red-600 italic" id="sun-text">रविवार: आर्डर के अनुसार उपलब्ध</p>
+            <img src="mascot1.png" alt="Mascot" class="w-48 mx-auto animate-float">
+            <div class="mt-8 bg-white p-8 rounded-2xl shadow-inner">
+                <h3 class="font-bold text-xl mb-4 text-amber-900" id="time-title">संपर्क का समय</h3>
+                <div class="space-y-2 font-bold text-gray-600">
+                    <p>सोमवार - शनिवार</p>
+                    <p class="text-2xl text-amber-600">9:00 AM - 1:00 PM</p>
+                    <p class="text-2xl text-amber-600">3:00 PM - 7:00 PM</p>
+                    <p class="text-xs text-red-500 mt-4 italic" id="sun-text">रविवार: आर्डर के अनुसार उपलब्ध</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contest" class="py-20 bg-white flex flex-col items-center relative overflow-hidden border-y border-amber-100">
-        <img src="mascot2.png" alt="Mascot" class="absolute -left-10 bottom-0 w-40 opacity-30 md:opacity-100 animate-float">
-        <h2 class="text-4xl brand-font mb-12 text-center px-4 text-amber-900" id="game-title">साप्ताहिक लकी ड्रा</h2>
-        
-        <div class="relative w-72 h-72 md:w-96 md:h-96 border-[12px] border-amber-500 rounded-full shadow-[0_25px_50px_-12px_rgba(217,119,6,0.5)] flex items-center justify-center bg-white z-10">
+    <section class="py-16 bg-white border-y border-amber-100 text-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl brand-font mb-12 text-amber-900">हमारी गुणवत्ता (Quality)</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="p-6 rounded-2xl bg-amber-50 border border-amber-100"><span class="text-4xl">☀️</span><p class="font-bold mt-2">Sun Dried</p></div>
+                <div class="p-6 rounded-2xl bg-amber-50 border border-amber-100"><span class="text-4xl">🚫</span><p class="font-bold mt-2">No Chemicals</p></div>
+                <div class="p-6 rounded-2xl bg-amber-50 border border-amber-100"><span class="text-4xl">🧤</span><p class="font-bold mt-2">Hand Rolled</p></div>
+                <div class="p-6 rounded-2xl bg-amber-50 border border-amber-100"><span class="text-4xl">🌿</span><p class="font-bold mt-2">Pure Spices</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contest" class="py-20 bg-amber-50 flex flex-col items-center relative overflow-hidden">
+        <img src="mascot2.png" alt="Mascot" class="absolute -left-10 bottom-0 w-40 animate-float opacity-30 md:opacity-100">
+        <h2 class="text-4xl brand-font mb-12 text-center text-amber-900" id="game-title">साप्ताहिक लकी ड्रा</h2>
+        <div class="relative w-72 h-72 md:w-96 md:h-96 border-[12px] border-amber-500 rounded-full shadow-[0_25px_50px_rgba(217,119,6,0.4)] flex items-center justify-center bg-white z-10">
             <div id="wheel" class="spin-wheel w-full h-full rounded-full border-4 border-white relative" style="background: conic-gradient(#d97706 0deg 60deg, #f59e0b 60deg 120deg, #d97706 120deg 180deg, #f59e0b 180deg 240deg, #d97706 240deg 300deg, #f59e0b 300deg 360deg);">
                 <div class="absolute inset-0 flex items-center justify-center font-bold text-white text-[10px] md:text-xs">
                     <span class="absolute" style="transform: rotate(30deg) translateY(-120px);">GIFT PACK</span>
@@ -101,94 +106,53 @@
                     <span class="absolute" style="transform: rotate(330deg) translateY(-120px);">COMBO</span>
                 </div>
             </div>
-            <button onclick="spinWheel()" id="spinBtn" class="absolute z-30 bg-white text-amber-600 font-black px-8 py-4 rounded-full shadow-2xl border-4 border-amber-600 text-xl hover:scale-110 transition uppercase">SPIN</button>
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-10 bg-red-600 rounded-b-full z-40 border-x-2 border-white"></div>
+            <button onclick="spinWheel()" id="spinBtn" class="absolute z-30 bg-white text-amber-600 font-black px-8 py-4 rounded-full shadow-2xl border-4 border-amber-600 text-xl hover:scale-110 transition">SPIN</button>
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-10 bg-red-600 rounded-b-full z-40"></div>
         </div>
-        <p id="spinResult" class="mt-8 font-bold text-xl text-amber-700 px-4 text-center h-8"></p>
+        <p id="spinResult" class="mt-8 font-bold text-xl text-amber-700 h-8"></p>
     </section>
 
-    <section class="py-16 bg-amber-50">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h3 class="text-2xl md:text-3xl brand-font mb-4 text-amber-900" id="social-title">हमारे डेली व्लॉग्स देखें</h3>
-            <p class="text-gray-600 mb-10 font-medium" id="social-p">हमारी असली मेकिंग और काम देखने के लिए जुड़ें!</p>
-            <div class="flex flex-wrap justify-center gap-6">
-                <a href="https://www.instagram.com/kawadswad" target="_blank" class="flex items-center gap-4 bg-white px-8 py-4 rounded-2xl shadow-md hover:shadow-xl transition-all border border-pink-100 group">
-                    <div class="w-12 h-12 bg-gradient-to-tr from-yellow-400 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold italic shadow-lg group-hover:rotate-12">IG</div>
-                    <div class="text-left">
-                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Follow On</p>
-                        <p class="font-bold text-gray-800">Instagram</p>
-                    </div>
-                </a>
-                <a href="https://youtube.com/@kawadswadudhyog" target="_blank" class="flex items-center gap-4 bg-white px-8 py-4 rounded-2xl shadow-md hover:shadow-xl transition-all border border-red-100 group">
-                    <div class="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center text-white font-bold italic shadow-lg group-hover:rotate-12">YT</div>
-                    <div class="text-left">
-                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Subscribe</p>
-                        <p class="font-bold text-gray-800">YouTube</p>
-                    </div>
-                </a>
-            </div>
+    <section class="py-16 bg-white text-center">
+        <h3 class="text-2xl font-bold mb-8 text-amber-900 italic" id="social-title">Follow Our Daily Work</h3>
+        <div class="flex justify-center gap-8">
+            <a href="https://www.instagram.com/kawadswad" target="_blank" class="flex flex-col items-center group">
+                <div class="w-16 h-16 bg-gradient-to-tr from-yellow-400 to-purple-600 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition">IG</div>
+                <span class="font-bold mt-2 text-sm text-gray-700">Instagram</span>
+            </a>
+            <a href="https://youtube.com/@kawadswadudhyog" target="_blank" class="flex flex-col items-center group">
+                <div class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition">YT</div>
+                <span class="font-bold mt-2 text-sm text-gray-700">YouTube</span>
+            </a>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-20 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-16">
-            <div>
-                <h4 class="brand-font text-3xl text-amber-400 mb-6 italic underline">Kawad Swad</h4>
-                <p class="text-gray-400 mb-8 leading-relaxed" id="footer-about">हम बिना क्वालिटी से समझौता किए कदम दर कदम आगे बढ़ने और ग्राहकों की सेवा करने का लक्ष्य रखते हैं।</p>
-                <div class="flex gap-4">
-                    <a href="tel:9630976867" class="bg-amber-600 px-6 py-3 rounded-xl font-bold hover:bg-amber-500 transition shadow-lg text-sm">📞 Call Now</a>
-                </div>
-            </div>
-            <div class="text-center md:text-left">
-                <h4 class="brand-font text-2xl text-amber-400 mb-6" id="footer-connect">संपर्क करें</h4>
-                <a href="https://wa.me/919630976867" class="inline-flex items-center gap-3 bg-green-600 px-8 py-4 rounded-2xl font-bold hover:scale-105 transition shadow-xl mb-6">
-                    WhatsApp Chat
-                </a>
-                <p class="text-xs text-gray-500 tracking-widest uppercase">Direct Interaction & Fresh Updates</p>
-            </div>
-            <div>
-                <h4 class="brand-font text-2xl text-amber-400 mb-6" id="footer-loc">लोकेशन</h4>
-                <a href="https://maps.app.goo.gl/svcqG8AeCx5pnpuAA?g_st=ac" target="_blank" class="block group">
-                    <div class="bg-gray-800 p-6 rounded-2xl border border-gray-700 group-hover:border-amber-500 transition-all">
-                        <p class="text-amber-500 font-bold mb-2 uppercase text-[10px] tracking-widest">Open in Google Maps</p>
-                        <p class="text-sm text-gray-300 leading-relaxed" id="footer-addr">Kawad Swad Local Unit, All preparation & drying is done here daily.</p>
-                    </div>
-                </a>
-            </div>
+    <footer class="bg-gray-900 text-white py-20 px-6 text-center">
+        <h4 class="brand-font text-4xl text-amber-400 mb-6 italic">Kawad Swad Udhyog</h4>
+        <div class="flex flex-wrap justify-center gap-4 mb-10">
+            <a href="tel:9630976867" class="bg-amber-600 px-8 py-4 rounded-xl font-bold shadow-lg">📞 कॉल करें</a>
+            <a href="https://wa.me/919630976867" class="bg-green-600 px-8 py-4 rounded-xl font-bold shadow-lg">💬 WhatsApp</a>
         </div>
-        <div class="mt-20 text-center text-gray-600 text-[10px] border-t border-gray-800 pt-10 tracking-[0.2em]">
-            © 2026 KAWAD SWAD UDHYOG • SWAD BHARA SAFAR
-        </div>
+        <p class="text-gray-500 mb-4 tracking-[0.3em] uppercase text-xs">Based in Indore (M.P)</p>
+        <a href="https://maps.app.goo.gl/svcqG8AeCx5pnpuAA?g_st=ac" target="_blank" class="text-amber-500 underline text-sm opacity-50 hover:opacity-100 transition">View on Map</a>
     </footer>
 
-    <div class="fixed bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-md border-t border-gray-100 flex gap-4 lg:hidden z-50">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform" class="flex-1 bg-amber-600 text-white text-center py-4 rounded-xl font-bold shadow-2xl shadow-amber-200 uppercase tracking-tighter" id="sticky-btn">Join Contest</a>
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-white/95 border-t lg:hidden z-50">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform" class="block w-full bg-amber-600 text-white text-center py-4 rounded-xl font-bold shadow-xl" id="sticky-btn">Join Weekly Contest</a>
     </div>
 
     <script>
-        // Language Data
         const data = {
             hi: {
                 tagline: '"स्वाद भरा सफ़र"', scrollText: "नीचे स्क्रॉल करें और जीतें!",
-                aboutTitle: "हमारे बारे में", aboutP1: "Kawad Swad Udhyog एक पारिवारिक व्यवसाय है। हम हर दिन ताज़ा पापड़ तैयार करते हैं। हम सिर्फ एक फैक्ट्री नहीं हैं; हम एक स्थानीय यूनिट हैं जहाँ तैयारी, मिक्सिंग और सुखाने का सारा काम रोज़ाना हमारी अपनी निगरानी में होता है।",
-                feat1: "रोज़ाना ताज़ा उत्पादन", feat2: "साफ़-सफाई का पूरा ध्यान", feat3: "कस्टम पापड़ मेकिंग सेवा",
-                mission: '"हमारा लक्ष्य हर घर तक शुद्ध, ताज़ा और स्वादिष्ट पापड़ पहुँचाना है।"',
+                aboutTitle: "हमारे बारे में", mission: '"हमारा लक्ष्य हर घर तक शुद्ध, ताज़ा और स्वादिष्ट पापड़ पहुँचाना है। फ़ैक्टरी से सीधा आपके घर तक।"',
                 timeTitle: "संपर्क का समय", sun: "रविवार: आर्डर के अनुसार उपलब्ध",
-                game: "साप्ताहिक लकी ड्रा", socialT: "हमारे डेली व्लॉग्स देखें", socialP: "हमारी असली मेकिंग और काम देखने के लिए जुड़ें!",
-                fAbout: "हम बिना क्वालिटी से समझौता किए कदम दर कदम आगे बढ़ने और ग्राहकों की सेवा करने का लक्ष्य रखते हैं।",
-                fConnect: "संपर्क करें", fLoc: "लोकेशन", fAddr: "कवाड़ स्वाद लोकल यूनिट, यहाँ रोज़ाना तैयारी और सुखाई की जाती है।",
-                sticky: "कॉन्टेस्ट में जुड़ें"
+                game: "साप्ताहिक लकी ड्रा", socialT: "डेली व्लॉग्स और असली काम देखें", sticky: "कॉन्टेस्ट में जुड़ें"
             },
             en: {
                 tagline: '"Swad Bhara Safar"', scrollText: "Scroll down to Play & Win!",
-                aboutTitle: "Our Story", aboutP1: "Kawad Swad Udhyog is a family-run business. We produce fresh papad every day. We aren't just a factory; we are a local unit where all prep, mixing, and drying is done daily under our own supervision.",
-                feat1: "Daily Fresh Production", feat2: "Clean & Hygienic Process", feat3: "Custom Papad Service",
-                mission: '"Our mission is to deliver fresh, flavorful papad to every home with trust."',
+                aboutTitle: "Our Story", mission: '"Our mission is to deliver fresh, flavorful papad to every home. Direct from our local unit to your table."',
                 timeTitle: "Business Hours", sun: "Sunday: Open based on orders",
-                game: "Weekly Lucky Draw", socialT: "Watch Our Daily Vlogs", socialP: "Join us to see our real kitchen journey!",
-                fAbout: "We aim to grow step by step without compromising on quality and serving with dedication.",
-                fConnect: "Connect With Us", fLoc: "Location", fAddr: "Kawad Swad Local Unit, All preparation & drying is done here daily.",
-                sticky: "Join Weekly Contest"
+                game: "Weekly Lucky Draw", socialT: "Follow Our Daily Vlogs", sticky: "Join Weekly Contest"
             }
         };
 
@@ -196,23 +160,12 @@
             document.getElementById('tagline').innerText = data[lang].tagline;
             document.getElementById('scroll-text').innerText = data[lang].scrollText;
             document.getElementById('about-title').innerText = data[lang].aboutTitle;
-            document.getElementById('about-p1').innerText = data[lang].aboutP1;
-            document.getElementById('feat1').innerText = data[lang].feat1;
-            document.getElementById('feat2').innerText = data[lang].feat2;
-            document.getElementById('feat3').innerText = data[lang].feat3;
             document.getElementById('mission-box').innerText = data[lang].mission;
             document.getElementById('time-title').innerText = data[lang].timeTitle;
             document.getElementById('sun-text').innerText = data[lang].sun;
             document.getElementById('game-title').innerText = data[lang].game;
             document.getElementById('social-title').innerText = data[lang].socialT;
-            document.getElementById('social-p').innerText = data[lang].socialP;
-            document.getElementById('footer-about').innerText = data[lang].fAbout;
-            document.getElementById('footer-connect').innerText = data[lang].fConnect;
-            document.getElementById('footer-loc').innerText = data[lang].fLoc;
-            document.getElementById('footer-addr').innerText = data[lang].fAddr;
             document.getElementById('sticky-btn').innerText = data[lang].sticky;
-
-            // Update UI
             document.getElementById('btn-en').classList.toggle('lang-active', lang === 'en');
             document.getElementById('btn-hi').classList.toggle('lang-active', lang === 'hi');
         }
@@ -222,14 +175,12 @@
             const btn = document.getElementById('spinBtn');
             const resultText = document.getElementById('spinResult');
             btn.disabled = true;
-            btn.style.opacity = '0.5';
-            const randomDegree = Math.floor(Math.random() * 1800) + 1800; 
+            const randomDegree = Math.floor(Math.random() * 3600) + 1800; 
             wheel.style.transform = `rotate(${randomDegree}deg)`;
             setTimeout(() => {
-                confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#d97706', '#f59e0b'] });
-                resultText.innerText = "🎉 AMAZING! You won a special offer! Register below.";
+                confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+                resultText.innerText = "🎉 AMAZING! You won! Register below to claim your prize.";
                 btn.disabled = false;
-                btn.style.opacity = '1';
             }, 4000);
         }
     </script>
