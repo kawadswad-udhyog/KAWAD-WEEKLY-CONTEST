@@ -9,119 +9,163 @@
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg,#fff176,#fff8e7);
-    text-align: center;
+    margin:0;
+    font-family:'Poppins';
+    background: radial-gradient(circle,#fff176,#fff8e7);
+    text-align:center;
 }
 
 /* HEADER */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
-    background: white;
+    position:sticky;
+    top:0;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    padding:10px;
+    align-items:center;
+    z-index:1000;
 }
 
-.logo { width: 45px; }
-
-.brand {
-    font-family: 'Baloo 2';
-    font-size: 20px;
-}
+.logo { width:40px; }
 
 /* HERO */
-.hero {
-    padding: 20px;
-}
+.hero { padding:20px; }
 
 .hero h1 {
-    font-family: 'Baloo 2';
+    font-family:'Baloo 2';
 }
 
 /* WHEEL */
 .wheel-container {
-    position: relative;
-    width: 230px;
-    height: 230px;
-    margin: auto;
+    width:260px;
+    height:260px;
+    margin:auto;
+    position:relative;
 }
 
 .wheel {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: conic-gradient(#ff9800,#4caf50,#f44336,#2196f3);
-    transition: transform 3s ease-out;
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    border:6px solid white;
+    background: conic-gradient(
+        #ff9800 0 60deg,
+        #4caf50 60deg 120deg,
+        #f44336 120deg 180deg,
+        #2196f3 180deg 240deg,
+        #ffeb3b 240deg 300deg,
+        #9c27b0 300deg 360deg
+    );
+    transition: transform 4s ease-out;
+}
+
+.label {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform-origin:0 0;
+    font-size:12px;
+    font-weight:600;
 }
 
 .pointer {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
+    position:absolute;
+    top:-12px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:22px;
 }
 
 /* BUTTON */
 .spin-btn {
-    background: #ff5722;
-    color: white;
-    padding: 14px 28px;
-    border-radius: 30px;
-    border: none;
-    font-size: 16px;
-    margin-top: 15px;
-    cursor: pointer;
+    background:#ff5722;
+    color:white;
+    padding:14px 30px;
+    border-radius:30px;
+    border:none;
+    font-size:16px;
+    margin-top:15px;
+    cursor:pointer;
     animation: glow 1.5s infinite;
 }
 
 @keyframes glow {
-    0% { box-shadow: 0 0 5px #ff5722; }
-    50% { box-shadow: 0 0 20px #ff5722; }
-    100% { box-shadow: 0 0 5px #ff5722; }
+    0%{box-shadow:0 0 5px #ff5722;}
+    50%{box-shadow:0 0 20px #ff5722;}
+    100%{box-shadow:0 0 5px #ff5722;}
 }
 
 /* POPUP */
 .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0);
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    z-index: 1000;
-    transition: 0.3s;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    z-index:1000;
+    transition:0.3s;
 }
 
 .popup.active {
-    transform: translate(-50%,-50%) scale(1);
+    transform:translate(-50%,-50%) scale(1);
 }
 
 /* CONFETTI */
 .confetti {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    background: red;
-    top: 0;
-    animation: fall 3s linear infinite;
+    position:fixed;
+    width:8px;
+    height:8px;
+    top:0;
+    animation:fall 3s linear infinite;
 }
 
 @keyframes fall {
     to { transform: translateY(100vh); }
 }
 
-/* WHATSAPP */
-.whatsapp-btn {
+/* PRODUCTS */
+.products {
+    display:flex;
+    overflow-x:auto;
+    gap:12px;
+    padding:15px;
+}
+
+.product {
+    min-width:220px;
+    background:white;
+    border-radius:12px;
+    padding:10px;
+}
+
+.product img {
+    width:100%;
+    border-radius:10px;
+}
+
+/* BUTTON */
+.btn {
     background:#25D366;
     color:white;
     padding:10px 18px;
     border-radius:25px;
     text-decoration:none;
     display:inline-block;
-    margin-top: 10px;
+    margin:5px;
+}
+
+/* FLOAT */
+.whatsapp-float {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:14px;
+    border-radius:50%;
 }
 </style>
 </head>
@@ -131,36 +175,84 @@ body {
 <!-- HEADER -->
 <div class="header">
     <img src="logo.png" class="logo">
-    <div class="brand">Kawad Swad</div>
+    <b>Kawad Swad</b>
 </div>
 
 <!-- HERO -->
 <div class="hero">
     <h1>🎡 Spin & Win पापड़</h1>
-    <p>आज ही अपनी किस्मत आजमाओ</p>
+    <p>Chotu Papad says: Spin karo aur jeeto!</p>
 
     <div class="wheel-container">
         <div class="pointer">🔻</div>
-        <div class="wheel" id="wheel"></div>
+
+        <div class="wheel" id="wheel">
+
+            <div class="label" style="transform:rotate(30deg)">🎁 Gift</div>
+            <div class="label" style="transform:rotate(90deg)">🔥 Offer</div>
+            <div class="label" style="transform:rotate(150deg)">🎉 Win</div>
+            <div class="label" style="transform:rotate(210deg)">😋 Papad</div>
+            <div class="label" style="transform:rotate(270deg)">💥 Lucky</div>
+            <div class="label" style="transform:rotate(330deg)">🎯 Chance</div>
+
+        </div>
     </div>
 
     <button class="spin-btn" onclick="spin()">SPIN NOW</button>
+
+    <br><br>
+
+    <img src="mascot1.png" style="width:90px;">
 </div>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
     <h2 id="popupText"></h2>
 
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header" class="whatsapp-btn">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform?usp=header" class="btn">
         Enter Contest
+    </a>
+
+    <a class="btn" href="https://wa.me/?text=🎁 Join Kawad Papad Contest 👉 https://kawadswad-udhyog.github.io/KAWAD-WEEKLY-CONTEST/">
+        Share
     </a>
 </div>
 
+<!-- PRODUCTS -->
+<section>
+<h2>Our Papad Range</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="moong.png">
+<h3>Moong Papad</h3>
+<p>Green Chilli • Jeera • Garlic • Punjabi • Khata Meetha • Pudhina</p>
+</div>
+
+<div class="product">
+<img src="chana.png">
+<h3>Chana Papad</h3>
+<p>Garlic • Punjabi • Tomato • Khata Meetha</p>
+</div>
+
+<div class="product">
+<img src="urad.png">
+<h3>Urad Papad</h3>
+<p>Garlic Variant</p>
+</div>
+
+</div>
+</section>
+
 <!-- CONTACT -->
 <section>
-    <h3>Order on WhatsApp</h3>
-    <a class="whatsapp-btn" href="https://wa.me/919630976867">9630976867</a>
+<h3>Order on WhatsApp</h3>
+<a class="btn" href="https://wa.me/919630976867">9630976867</a>
+<a class="btn" href="https://wa.me/919630176867">9630176867</a>
 </section>
+
+<a href="https://wa.me/919630976867" class="whatsapp-float">💬</a>
 
 <script>
 function spin() {
@@ -168,25 +260,28 @@ function spin() {
     let popup = document.getElementById("popup");
     let text = document.getElementById("popupText");
 
-    let deg = Math.floor(3600 + Math.random()*360);
-    wheel.style.transform = "rotate("+deg+"deg)";
+    let options = [
+        {deg: 60, msg:"🎉 You got a Reward Chance!"},
+        {deg:120, msg:"🔥 Lucky Entry Confirmed!"},
+        {deg:180, msg:"🎁 Surprise Reward Unlocked!"}
+    ];
+
+    let pick = options[Math.floor(Math.random()*options.length)];
+
+    let rotate = 3600 + pick.deg;
+    wheel.style.transform = "rotate("+rotate+"deg)";
 
     setTimeout(()=>{
-        let msgs = [
-            "🎉 आप जीतने के लिए चुने गए हैं!",
-            "🔥 Lucky Entry मिल गई!",
-            "🎁 Reward Chance Unlock!"
-        ];
-        text.innerHTML = msgs[Math.floor(Math.random()*msgs.length)];
+        text.innerHTML = pick.msg;
         popup.classList.add("active");
         confetti();
-        playSound();
-    },3000);
+        sound();
+    },4000);
 }
 
 function confetti(){
-    for(let i=0;i<30;i++){
-        let c = document.createElement("div");
+    for(let i=0;i<40;i++){
+        let c=document.createElement("div");
         c.className="confetti";
         c.style.left=Math.random()*100+"%";
         c.style.background=["red","yellow","green","blue"][Math.floor(Math.random()*4)];
@@ -194,9 +289,9 @@ function confetti(){
     }
 }
 
-function playSound(){
-    let audio = new Audio("https://www.soundjay.com/buttons/sounds/button-3.mp3");
-    audio.play();
+function sound(){
+    let a=new Audio("https://www.soundjay.com/buttons/sounds/button-3.mp3");
+    a.play();
 }
 </script>
 
