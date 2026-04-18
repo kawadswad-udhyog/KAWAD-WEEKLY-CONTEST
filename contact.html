@@ -83,7 +83,33 @@
                 <h3 class="brand-font text-3xl text-amber-900 mb-2 font-black italic">Send a Message</h3>
                 <p class="text-[10px] text-gray-400 font-black mb-10 uppercase tracking-widest">हमें अपनी क्वेरी भेजें</p>
                 
-                <form action="#" class="space-y-6">
+                <form action="https://formspree.io/f/xaqajebq" method="POST" class="grid md:grid-cols-2 gap-6">
+    <div class="md:col-span-2">
+        <label class="text-[9px] font-black uppercase text-gray-400 ml-2 mb-2 block tracking-widest">Company / Shop Name</label>
+        <input type="text" name="business_name" placeholder="आपकी दुकान या फर्म का नाम" class="input-field" required>
+    </div>
+    <div>
+        <label class="text-[9px] font-black uppercase text-gray-400 ml-2 mb-2 block tracking-widest">Owner Name</label>
+        <input type="text" name="owner_name" placeholder="आपका नाम" class="input-field" required>
+    </div>
+    <div>
+        <label class="text-[9px] font-black uppercase text-gray-400 ml-2 mb-2 block tracking-widest">Mobile Number</label>
+        <input type="tel" name="phone" placeholder="00000 00000" class="input-field" required>
+    </div>
+    <div class="md:col-span-2">
+        <label class="text-[9px] font-black uppercase text-gray-400 ml-2 mb-2 block tracking-widest">Approx Order Quantity</label>
+        <select name="quantity" class="input-field appearance-none">
+            <option>Retail Trial (10-50 kg)</option>
+            <option>Wholesale Order (50-100 kg)</option>
+            <option>Bulk Distribution (200kg+)</option>
+        </select>
+    </div>
+    <div class="md:col-span-2 mt-4">
+        <button type="submit" class="w-full bg-amber-600 text-white py-5 rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl hover:bg-amber-700 transition-all active:scale-95">
+            Submit Inquiry 🚀
+        </button>
+    </div>
+</form>
                     <div>
                         <label class="text-[10px] font-black uppercase text-gray-400 ml-4 mb-2 block">Your Name</label>
                         <input type="text" placeholder="आपका नाम" class="input-style text-gray-700">
