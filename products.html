@@ -3,36 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogue | Kawad Swad Udhyog</title>
+    <title>Our Shop | Kawad Swad Udhyog</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Playfair+Display:wght@700;900&family=Hind:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Playfair+Display:wght@700;900&family=Hind:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Hind', 'Poppins', sans-serif; background-color: #fffaf0; }
+        body { font-family: 'Poppins', 'Hind', sans-serif; background-color: #fdfaf5; scroll-behavior: smooth; }
         .brand-font { font-family: 'Playfair Display', serif; }
-        .product-card { transition: transform 0.3s ease; border: 1px solid #fde68a; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+        .product-card { 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            background: white;
+            border: 1px solid rgba(217, 119, 6, 0.1);
+        }
+        .product-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 25px -5px rgba(217, 119, 6, 0.1), 0 10px 10px -5px rgba(217, 119, 6, 0.04);
+            border-color: #d97706;
+        }
+        .section-title { position: relative; display: inline-block; }
+        .section-title::after {
+            content: ''; position: absolute; bottom: -10px; left: 0; 
+            width: 50%; height: 4px; background: #d97706; border-radius: 2px;
+        }
+        .btn-whatsapp {
+            background: #25D366;
+            transition: all 0.3s ease;
+        }
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="text-gray-900">
 
-    <nav class="bg-white p-4 shadow-md flex justify-between items-center px-6 sticky top-0 z-50">
-        <a href="index.html" class="font-bold text-amber-600 flex items-center gap-2"><span>←</span> HOME</a>
+    <nav class="glass-nav p-4 shadow-sm flex justify-between items-center px-6 sticky top-0 z-50">
+        <a href="index.html" class="font-black text-amber-700 flex items-center gap-2 hover:scale-105 transition">
+            <span class="text-xl">←</span> 
+            <span class="hidden md:inline uppercase tracking-tighter">Back to Home</span>
+        </a>
         <div class="text-center">
-            <p class="text-[10px] font-bold text-amber-800 tracking-widest uppercase">Nimar, Madhya Pradesh</p>
+            <h2 class="brand-font text-lg md:text-xl font-black text-amber-900 leading-none">Kawad Swad</h2>
+            <p class="text-[8px] md:text-[10px] font-bold text-amber-600 tracking-[0.2em] uppercase">Nimar, Madhya Pradesh</p>
         </div>
-        <img src="logo.png" alt="Logo" class="w-10">
+        <img src="logo.png" alt="Logo" class="w-10 md:w-12 drop-shadow-sm">
     </nav>
 
-    <header class="py-10 text-center bg-amber-600 text-white">
-        <h1 class="brand-font text-4xl md:text-5xl mb-1">Our Full Catalogue</h1>
-        <p class="italic text-sm opacity-90">निमाड़ का असली स्वाद - ताज़ा और शुद्ध</p>
+    <header class="py-16 text-center bg-amber-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+        </div>
+        <div class="relative z-10">
+            <h1 class="brand-font text-5xl md:text-7xl mb-2 font-black">Our Swad Gallery</h1>
+            <p class="italic text-amber-400 font-medium tracking-wide">Authentic Recipes • Zero Rice • Nimar Heritage</p>
+        </div>
     </header>
 
-    <main class="py-12 px-4 max-w-7xl mx-auto">
+    <main class="py-16 px-4 max-w-7xl mx-auto">
 
-        <div class="mb-16">
-            <h2 class="text-2xl font-black text-green-700 mb-8 border-l-4 border-green-600 pl-4 uppercase">Moong Master Line</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="mb-24">
+            <h2 class="section-title text-3xl font-black text-green-800 mb-12 uppercase italic">Moong Master Line</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <script>
                     const moong = [
                         { name: "Moong Master Papad", file: "MMP.png" },
@@ -45,16 +76,14 @@
                     ];
                     moong.forEach(p => {
                         document.write(`
-                            <div class="product-card bg-white rounded-2xl p-4 flex flex-col items-center">
-                                <img src="${p.file}" alt="${p.name}" class="w-full h-auto rounded-xl mb-4">
-                                <h3 class="text-sm font-bold text-center mb-4 h-10 flex items-center">${p.name}</h3>
-                                <div class="w-full flex items-center gap-3">
-                                    <a href="https://wa.me/919630976867" class="flex-grow bg-green-600 text-white text-center py-2 rounded-lg font-bold text-xs">BUY NOW</a>
-                                    <div class="flex gap-2 opacity-40 grayscale hover:grayscale-0 transition cursor-help" title="Also available on Amazon & Meesho">
-                                        <span class="text-[10px] font-black">AMZ</span>
-                                        <span class="text-[10px] font-black">MSH</span>
-                                    </div>
+                            <div class="product-card rounded-3xl p-5 flex flex-col items-center">
+                                <div class="w-full h-56 flex items-center justify-center overflow-hidden rounded-2xl bg-gray-50 mb-6">
+                                    <img src="${p.file}" alt="${p.name}" class="max-h-full hover:scale-110 transition duration-500">
                                 </div>
+                                <h3 class="text-md font-bold text-center mb-6 h-12 flex items-center leading-tight text-gray-800">${p.name}</h3>
+                                <a href="https://wa.me/919630976867?text=Hi, I want to order ${p.name}" class="btn-whatsapp w-full text-white text-center py-3 rounded-xl font-bold text-sm tracking-wide shadow-md">
+                                    BUY VIA WHATSAPP
+                                </a>
                             </div>
                         `);
                     });
@@ -62,9 +91,9 @@
             </div>
         </div>
 
-        <div class="mb-16">
-            <h2 class="text-2xl font-black text-amber-600 mb-8 border-l-4 border-amber-600 pl-4 uppercase">Chana Chotu Papad Line</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="mb-24">
+            <h2 class="section-title text-3xl font-black text-amber-600 mb-12 uppercase italic">Chana Chotu Line</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <script>
                     const chana = [
                         { name: "Chana Chotu Papad", file: "CCP.png" },
@@ -75,16 +104,14 @@
                     ];
                     chana.forEach(p => {
                         document.write(`
-                            <div class="product-card bg-white rounded-2xl p-4 flex flex-col items-center">
-                                <img src="${p.file}" alt="${p.name}" class="w-full h-auto rounded-xl mb-4">
-                                <h3 class="text-sm font-bold text-center mb-4 h-10 flex items-center">${p.name}</h3>
-                                <div class="w-full flex items-center gap-3">
-                                    <a href="https://wa.me/919630976867" class="flex-grow bg-green-600 text-white text-center py-2 rounded-lg font-bold text-xs">BUY NOW</a>
-                                    <div class="flex gap-2 opacity-40 grayscale hover:grayscale-0 transition cursor-help">
-                                        <span class="text-[10px] font-black">AMZ</span>
-                                        <span class="text-[10px] font-black">MSH</span>
-                                    </div>
+                            <div class="product-card rounded-3xl p-5 flex flex-col items-center">
+                                <div class="w-full h-56 flex items-center justify-center overflow-hidden rounded-2xl bg-amber-50 mb-6">
+                                    <img src="${p.file}" alt="${p.name}" class="max-h-full hover:scale-110 transition duration-500">
                                 </div>
+                                <h3 class="text-md font-bold text-center mb-6 h-12 flex items-center leading-tight text-gray-800">${p.name}</h3>
+                                <a href="https://wa.me/919630976867?text=Hi, I want to order ${p.name}" class="btn-whatsapp w-full text-white text-center py-3 rounded-xl font-bold text-sm tracking-wide shadow-md">
+                                    BUY VIA WHATSAPP
+                                </a>
                             </div>
                         `);
                     });
@@ -92,9 +119,9 @@
             </div>
         </div>
 
-        <div class="mb-16">
-            <h2 class="text-2xl font-black text-gray-700 mb-8 border-l-4 border-gray-600 pl-4 uppercase">Urad Guru Line</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="mb-24">
+            <h2 class="section-title text-3xl font-black text-gray-700 mb-12 uppercase italic">Urad Guru Line</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <script>
                     const urad = [
                         { name: "Urad Guru Papad", file: "UGP.png" },
@@ -102,67 +129,67 @@
                     ];
                     urad.forEach(p => {
                         document.write(`
-                            <div class="product-card bg-white rounded-2xl p-4 flex flex-col items-center border-gray-200">
-                                <img src="${p.file}" alt="${p.name}" class="w-full h-auto rounded-xl mb-4">
-                                <h3 class="text-sm font-bold text-center mb-4 h-10 flex items-center">${p.name}</h3>
-                                <div class="w-full flex items-center gap-3">
-                                    <a href="https://wa.me/919630976867" class="flex-grow bg-green-600 text-white text-center py-2 rounded-lg font-bold text-xs">BUY NOW</a>
-                                    <div class="flex gap-2 opacity-40 grayscale hover:grayscale-0 transition cursor-help">
-                                        <span class="text-[10px] font-black">AMZ</span>
-                                        <span class="text-[10px] font-black">MSH</span>
-                                    </div>
+                            <div class="product-card rounded-3xl p-5 flex flex-col items-center">
+                                <div class="w-full h-56 flex items-center justify-center overflow-hidden rounded-2xl bg-gray-100 mb-6">
+                                    <img src="${p.file}" alt="${p.name}" class="max-h-full hover:scale-110 transition duration-500">
                                 </div>
+                                <h3 class="text-md font-bold text-center mb-6 h-12 flex items-center leading-tight text-gray-800">${p.name}</h3>
+                                <a href="https://wa.me/919630976867?text=Hi, I want to order ${p.name}" class="btn-whatsapp w-full text-white text-center py-3 rounded-xl font-bold text-sm tracking-wide shadow-md">
+                                    BUY VIA WHATSAPP
+                                </a>
                             </div>
                         `);
                     });
                 </script>
             </div>
         </div>
-                <div class="mb-16">
-            <h2 class="text-2xl font-black text-red-700 mb-8 border-l-4 border-red-600 pl-4 uppercase">Premium Seasoning Line</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+        <div class="mb-24">
+            <h2 class="section-title text-3xl font-black text-red-700 mb-12 uppercase italic">Premium Seasoning Line</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 
-                <div class="product-card bg-white rounded-2xl p-4 flex flex-col items-center border-amber-200">
-                    <div class="w-full h-48 bg-gray-100 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
-                        <img src="KBGM.png" alt="Kawad Black Gold Masala" class="max-h-full transition-transform hover:scale-110" onerror="this.src='https://via.placeholder.com/300x300?text=Black+Gold+Masala'">
+                <div class="product-card rounded-3xl p-6 flex flex-col items-center bg-zinc-900 text-white border-zinc-800">
+                    <div class="w-full h-64 bg-zinc-800 rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
+                        <img src="KBGM.png" alt="Kawad Black Gold Masala" class="max-h-full transition-transform hover:scale-110" onerror="this.src='https://via.placeholder.com/400x400?text=Black+Gold+Masala'">
                     </div>
-                    <h3 class="text-sm font-bold text-center mb-1">Kawad Black Gold Masala</h3>
-                    <p class="text-[10px] text-gray-500 mb-4 font-bold uppercase tracking-widest">Code: KBGM</p>
-                    <div class="w-full flex items-center gap-3">
-                        <a href="https://wa.me/919630976867?text=I+want+to+order+KBGM+Black+Gold+Masala" class="flex-grow bg-green-600 text-white text-center py-2 rounded-lg font-bold text-xs uppercase">Buy Now</a>
-                        <div class="flex gap-2 opacity-40">
-                            <span class="text-[10px] font-black">AMZ</span>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-black text-center mb-2 tracking-tight">Kawad Black Gold Masala</h3>
+                    <p class="text-amber-500 text-xs font-bold uppercase tracking-[0.3em] mb-6 text-center">Nimar Quality Seasoning</p>
+                    <a href="https://wa.me/919630976867?text=I+want+to+order+KBGM+Black+Gold+Masala" class="btn-whatsapp w-full text-white text-center py-4 rounded-2xl font-black text-sm tracking-widest shadow-xl">
+                        BUY VIA WHATSAPP
+                    </a>
                 </div>
 
-                <div class="product-card bg-white rounded-2xl p-4 flex flex-col items-center border-amber-200">
-                    <div class="w-full h-48 bg-red-50 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
-                        <img src="KLCM.png" alt="Kawad Lal Chat Masala" class="max-h-full transition-transform hover:scale-110" onerror="this.src='https://via.placeholder.com/300x300?text=Lal+Chat+Masala'">
+                <div class="product-card rounded-3xl p-6 flex flex-col items-center bg-red-950 text-white border-red-900">
+                    <div class="w-full h-64 bg-red-900/20 rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
+                        <img src="KLCM.png" alt="Kawad Lal Cht Masala" class="max-h-full transition-transform hover:scale-110" onerror="this.src='https://via.placeholder.com/400x400?text=Lal+Cht+Masala'">
                     </div>
-                    <h3 class="text-sm font-bold text-center mb-1">Kawad Lal Chat Masala</h3>
-                    <p class="text-[10px] text-gray-500 mb-4 font-bold uppercase tracking-widest">Code: KLCM</p>
-                    <div class="w-full flex items-center gap-3">
-                        <a href="https://wa.me/919630976867?text=I+want+to+order+KLCM+Lal+Chat+Masala" class="flex-grow bg-green-600 text-white text-center py-2 rounded-lg font-bold text-xs uppercase">Buy Now</a>
-                        <div class="flex gap-2 opacity-40">
-                            <span class="text-[10px] font-black">AMZ</span>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-black text-center mb-2 tracking-tight">Kawad Lal Cht Masala</h3>
+                    <p class="text-red-400 text-xs font-bold uppercase tracking-[0.3em] mb-6 text-center">Authentic Spiced Zest</p>
+                    <a href="https://wa.me/919630976867?text=I+want+to+order+KLCM+Lal+Cht+Masala" class="btn-whatsapp w-full text-white text-center py-4 rounded-2xl font-black text-sm tracking-widest shadow-xl">
+                        BUY VIA WHATSAPP
+                    </a>
                 </div>
 
             </div>
         </div>
 
-        <section class="bg-amber-900 text-white rounded-[2rem] p-8 text-center shadow-2xl">
-            <h2 class="text-3xl font-black mb-4 uppercase tracking-tighter italic underline">Papad Making Service</h2>
-            <p class="text-amber-200 mb-6 text-sm">Bring your own ingredients to our Nimar Unit. We handle Mixing, Rolling, and Sun-Drying.</p>
-            <a href="https://wa.me/919630976867" class="inline-block bg-white text-amber-900 px-10 py-3 rounded-full font-black shadow-xl">WHATSAPP FOR SERVICE</a>
+        <section class="bg-zinc-900 text-white rounded-[3rem] p-12 text-center shadow-2xl relative overflow-hidden">
+            <div class="absolute inset-0 opacity-5">
+                <div class="bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] w-full h-full"></div>
+            </div>
+            <div class="relative z-10">
+                <h2 class="brand-font text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter italic underline decoration-amber-600">Papad Making Service</h2>
+                <p class="text-amber-400 mb-8 text-md font-medium max-w-2xl mx-auto">निमाड़ की बेहतरीन सर्विस: आप आटा लाएं, हम बनाएंगे बेहतरीन पापड़। Mixing, Rolling, and Sun-Drying managed by experts.</p>
+                <a href="https://wa.me/919630976867?text=Hi, I am interested in your Papad Making Service" class="inline-block bg-white text-black px-12 py-4 rounded-full font-black shadow-xl hover:scale-110 transition duration-300">
+                    START CUSTOM ORDER
+                </a>
+            </div>
         </section>
 
     </main>
 
-    <footer class="py-12 text-center text-gray-400 text-[10px] tracking-[0.3em] uppercase">
-        © 2026 KAWAD SWAD UDHYOG • NIMAR, MADHYA PRADESH
+    <footer class="py-16 text-center text-gray-500 text-[10px] tracking-[0.4em] uppercase border-t border-gray-100">
+        © 2026 KAWAD SWAD UDHYOG • MADHYA PRADESH
     </footer>
 
 </body>
