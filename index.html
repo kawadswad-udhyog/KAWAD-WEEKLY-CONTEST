@@ -10,7 +10,7 @@
     <style>
         :root { --amber-deep: #d97706; --amber-light: #fffaf0; }
         body { font-family: 'Hind', 'Poppins', sans-serif; background-color: var(--amber-light); scroll-behavior: smooth; overflow-x: hidden; }
-        .brand-font { font-family: 'Playfair Display', serif; font-style: normal; } /* Removed Italic */
+        .brand-font { font-family: 'Playfair Display', serif; font-style: normal; }
         
         .animate-float { animation: float 4s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
@@ -19,7 +19,6 @@
         .lang-active { background: var(--amber-deep) !important; color: white !important; }
         .hero-bg { background: radial-gradient(circle at top right, #fef3c7, transparent), radial-gradient(circle at bottom left, #fff7ed, transparent); }
         
-        /* Popup Animation */
         .popup-scale { animation: popupScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         @keyframes popupScale { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
     </style>
@@ -78,6 +77,7 @@
                 <a href="bulk.html" class="p-4 bg-amber-50 rounded-2xl">Bulk Inquiry</a>
                 <a href="about.html" class="p-4 bg-amber-50 rounded-2xl">About</a>
                 <a href="gallery.html" class="p-4 bg-amber-50 rounded-2xl">Gallery</a>
+                <a href="reviews.html" class="p-4 bg-amber-50 rounded-2xl">Reviews</a>
                 <a href="contact.html" class="p-4 bg-amber-600 text-white rounded-2xl">Contact</a>
             </div>
         </div>
@@ -108,39 +108,6 @@
         </div>
     </header>
 
-    <section class="py-12 bg-white border-y border-amber-100">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="text-center"><div class="text-4xl mb-2">☀️</div><p class="text-[10px] font-black uppercase tracking-widest text-gray-400">Sun Dried</p></div>
-            <div class="text-center"><div class="text-4xl mb-2">🏭</div><p class="text-[10px] font-black uppercase tracking-widest text-gray-400">Direct Factory</p></div>
-            <div class="text-center"><div class="text-4xl mb-2">🌿</div><p class="text-[10px] font-black uppercase tracking-widest text-gray-400">Pure Spices</p></div>
-            <div class="text-center"><div class="text-4xl mb-2">🤝</div><p class="text-[10px] font-black uppercase tracking-widest text-gray-400">Family Owned</p></div>
-        </div>
-    </section>
-
-    <section class="py-24 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-        <div class="order-2 lg:order-1">
-            <h2 class="text-5xl brand-font mb-6 text-amber-900 font-black" id="about-title">हमारे बारे में</h2>
-            <p class="text-amber-600 font-black text-xl mb-6 tracking-wide" id="about-loc">निमाड़, मध्य प्रदेश की माटी का असली स्वाद।</p>
-            <p class="text-gray-600 leading-relaxed text-lg mb-10 font-medium" id="about-p1">Kawad Swad Udhyog एक पारिवारिक व्यवसाय है। हम हर दिन ताज़ा पापड़ तैयार करते हैं। हम एक स्थानीय यूनिट हैं जहाँ तैयारी, मिक्सिंग और सुखाने का काम रोज़ाना हमारी निगरानी में होता है।</p>
-            <div class="p-8 bg-zinc-900 rounded-[2.5rem] text-amber-400 shadow-2xl relative overflow-hidden group">
-                <p class="italic text-xl font-bold z-10 relative leading-relaxed" id="mission-box">"हमारा लक्ष्य हर घर तक शुद्ध, ताज़ा और स्वादिष्ट पापड़ पहुँचाना है। फ़ैक्टरी से सीधा आपके घर तक।"</p>
-                <div class="absolute -right-10 -bottom-10 opacity-10 text-[12rem] group-hover:rotate-12 transition-transform">😋</div>
-            </div>
-        </div>
-        <div class="order-1 lg:order-2 bg-white rounded-[4rem] p-12 text-center shadow-xl border border-amber-50">
-            <img src="mascot2.png" alt="Mascot" class="w-64 mx-auto animate-float mb-10">
-            <div class="bg-amber-900 text-white p-8 rounded-3xl shadow-inner">
-                <h3 class="font-black text-2xl mb-6 uppercase tracking-widest text-amber-400" id="time-title">Timings</h3>
-                <div class="space-y-4 text-xl font-bold">
-                    <p class="opacity-70 text-sm">Mon - Sat</p>
-                    <p class="text-3xl">9:00 AM - 1:00 PM</p>
-                    <p class="text-3xl">3:00 PM - 7:00 PM</p>
-                    <p class="text-xs text-amber-500 italic" id="sun-text">Sunday: On Request Only</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="contest" class="py-24 bg-zinc-900 relative overflow-hidden">
         <div class="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
         <div class="max-w-6xl mx-auto px-6 relative z-10">
@@ -156,8 +123,8 @@
                         <div class="flex gap-6 items-start">
                             <div class="w-14 h-14 bg-amber-600 text-white rounded-2xl flex items-center justify-center font-black text-2xl shrink-0">1</div>
                             <div>
-                                <h4 class="text-white font-black text-xl mb-2">उत्पाद खरीदें (Purchase)</h4>
-                                <p class="text-gray-400 text-sm">कवाड़ स्वाद का कोई भी प्रोडक्ट खरीदें। हर पैकेट पर आपको एक मौका मिलता है!</p>
+                                <h4 class="text-white font-black text-xl mb-2 text-left">उत्पाद खरीदें (Purchase)</h4>
+                                <p class="text-gray-400 text-sm text-left">कवाड़ स्वाद का कोई भी प्रोडक्ट खरीदें। हर पैकेट पर आपको एक मौका मिलता है!</p>
                             </div>
                         </div>
                     </div>
@@ -165,33 +132,24 @@
                         <div class="flex gap-6 items-start">
                             <div class="w-14 h-14 bg-amber-600 text-white rounded-2xl flex items-center justify-center font-black text-2xl shrink-0">2</div>
                             <div>
-                                <h4 class="text-white font-black text-xl mb-2">फोटो और फॉर्म (Upload)</h4>
-                                <p class="text-gray-400 text-sm">प्रोडक्ट के साथ अपनी फोटो खींचें और नीचे दिए गए फॉर्म में विवरण भरें।</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-zinc-800/50 p-8 rounded-[2.5rem] border border-zinc-700 hover:border-amber-600 transition-all">
-                        <div class="flex gap-6 items-start">
-                            <div class="w-14 h-14 bg-amber-600 text-white rounded-2xl flex items-center justify-center font-black text-2xl shrink-0">3</div>
-                            <div>
-                                <h4 class="text-white font-black text-xl mb-2">रविवार का इंतज़ार (Win)</h4>
-                                <p class="text-gray-400 text-sm">हर रविवार लकी ड्रा होगा। विजेता को सीधा UPI कैशबैक या फ्री पापड़ मिलेगा।</p>
+                                <h4 class="text-white font-black text-xl mb-2 text-left">फोटो और फॉर्म (Upload)</h4>
+                                <p class="text-gray-400 text-sm text-left">प्रोडक्ट के साथ अपनी फोटो खींचें और नीचे दिए गए फॉर्म में विवरण भरें।</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-amber-600 rounded-[3rem] p-10 md:p-14 text-center shadow-2xl relative overflow-hidden">
-                    <div class="absolute -top-10 -right-10 opacity-10 text-[15rem] font-black text-white">🎁</div>
+                <div class="bg-amber-600 rounded-[3rem] p-10 md:p-14 text-center shadow-2xl relative overflow-hidden group">
+                    <div class="absolute -top-10 -right-10 opacity-10 text-[15rem] font-black text-white group-hover:rotate-12 transition-transform">🎁</div>
                     <h3 class="brand-font text-4xl text-amber-900 font-black mb-6 uppercase">Ready to Win?</h3>
-                    <p class="text-amber-950 font-bold mb-10">अपनी खरीद का विवरण और फोटो सबमिट करने के लिए नीचे क्लिक करें।</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform" target="_blank" class="block w-full bg-zinc-900 text-amber-500 py-5 rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl hover:scale-105 transition-all">सबमिट फॉर्म 🚀</a>
+                    <p class="text-amber-950 font-bold mb-10 text-sm">अपनी खरीद का विवरण और फोटो सबमिट करने के लिए नीचे क्लिक करें।</p>
+                    <a href="https://forms.gle/CbMEEaB5g8b64b9n7" target="_blank" rel="noopener noreferrer" class="block w-full bg-zinc-900 text-amber-500 py-6 rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl hover:scale-105 transition-all text-center">ओपन कॉन्टेस्ट फॉर्म 🚀</a>
                 </div>
             </div>
 
             <div class="mt-20 p-8 border border-zinc-800 rounded-3xl bg-zinc-900/50">
-                <h5 class="text-amber-600 font-black text-[10px] uppercase tracking-[0.3em] mb-6 border-b border-zinc-800 pb-2">Terms & Conditions (नियम और शर्तें)</h5>
-                <ul class="grid md:grid-cols-2 gap-4 text-[11px] text-gray-500 font-medium">
+                <h5 class="text-amber-600 font-black text-[10px] uppercase tracking-[0.3em] mb-6 border-b border-zinc-800 pb-2 text-left">Terms & Conditions (नियम और शर्तें)</h5>
+                <ul class="grid md:grid-cols-2 gap-4 text-[11px] text-gray-500 font-medium text-left">
                     <li>• यह कॉन्टेस्ट केवल कवाड़ स्वाद के असली ग्राहकों के लिए है।</li>
                     <li>• इनाम के लिए प्रोडक्ट की फोटो के साथ फॉर्म भरना अनिवार्य है।</li>
                     <li>• एक खरीद (Purchase) पर एक ही बार एंट्री मान्य होगी।</li>
@@ -230,16 +188,11 @@
 
     <script>
         const data = {
-            hi: { tagline: '"स्वाद भरा सफ़र"', aboutTitle: "हमारे बारे में", aboutLoc: "निमाड़, मध्य प्रदेश की माटी का असली स्वाद।", aboutP1: "Kawad Swad Udhyog एक पारिवारिक व्यवसाय है। हम हर दिन ताज़ा पापड़ तैयार करते हैं। हम एक स्थानीय यूनिट हैं जहाँ तैयारी, मिक्सिंग और सुखाने का काम रोज़ाना हमारी निगरानी में होता है।", timeTitle: "Timings", sun: "Sunday: On Request Only", sticky: "अभी कॉन्टेस्ट में जुड़ें" },
-            en: { tagline: '"Swad Bhara Safar"', aboutTitle: "Our Story", aboutLoc: "The Authentic Taste of Nimar, MP.", aboutP1: "Kawad Swad Udhyog is a family-run business. We produce fresh papad daily in our local unit under strict supervision.", timeTitle: "Business Hours", sun: "Sunday: On Request Only", sticky: "Join Contest Now" }
+            hi: { tagline: '"स्वाद भरा सफ़र"', sticky: "अभी कॉन्टेस्ट में जुड़ें" },
+            en: { tagline: '"Swad Bhara Safar"', sticky: "Join Contest Now" }
         };
         function setLang(lang) {
             document.getElementById('tagline').innerText = data[lang].tagline;
-            document.getElementById('about-title').innerText = data[lang].aboutTitle;
-            document.getElementById('about-loc').innerText = data[lang].aboutLoc;
-            document.getElementById('about-p1').innerText = data[lang].aboutP1;
-            document.getElementById('time-title').innerText = data[lang].timeTitle;
-            document.getElementById('sun-text').innerText = data[lang].sun;
             document.getElementById('sticky-btn').innerText = data[lang].sticky;
             document.getElementById('btn-en').classList.toggle('lang-active', lang === 'en');
             document.getElementById('btn-hi').classList.toggle('lang-active', lang === 'hi');
