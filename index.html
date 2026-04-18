@@ -8,6 +8,40 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&family=Hind:wght@400;700&display=swap" rel="stylesheet">
     <style>
+                /* This moves the text closer to center on mobile and further on desktop */
+        .wheel-text span {
+            position: absolute;
+            transform-origin: center;
+            top: 50%;
+            left: 50%;
+        }
+        /* Mobile View (Small Screens) */
+        @media (max-width: 768px) {
+            .wheel-text span {
+                font-size: 8px; /* Smaller font for small wheel */
+                margin-top: -10px; /* Center alignment */
+            }
+            /* Adjust each segment position for mobile */
+            .seg1 { transform: translate(-50%, -50%) rotate(30deg) translateY(-85px); }
+            .seg2 { transform: translate(-50%, -50%) rotate(90deg) translateY(-85px); }
+            .seg3 { transform: translate(-50%, -50%) rotate(150deg) translateY(-85px); }
+            .seg4 { transform: translate(-50%, -50%) rotate(210deg) translateY(-85px); }
+            .seg5 { transform: translate(-50%, -50%) rotate(270deg) translateY(-85px); }
+            .seg6 { transform: translate(-50%, -50%) rotate(330deg) translateY(-85px); }
+        }
+        /* Desktop View (Large Screens) */
+        @media (min-width: 769px) {
+            .wheel-text span {
+                font-size: 14px;
+            }
+            .seg1 { transform: translate(-50%, -50%) rotate(30deg) translateY(-140px); }
+            .seg2 { transform: translate(-50%, -50%) rotate(90deg) translateY(-140px); }
+            .seg3 { transform: translate(-50%, -50%) rotate(150deg) translateY(-140px); }
+            .seg4 { transform: translate(-50%, -50%) rotate(210deg) translateY(-140px); }
+            .seg5 { transform: translate(-50%, -50%) rotate(270deg) translateY(-140px); }
+            .seg6 { transform: translate(-50%, -50%) rotate(330deg) translateY(-140px); }
+        }
+
         :root { --amber-deep: #d97706; --amber-light: #fffaf0; }
         body { font-family: 'Hind', 'Poppins', sans-serif; background-color: var(--amber-light); scroll-behavior: smooth; overflow-x: hidden; }
         .brand-font { font-family: 'Playfair Display', serif; }
@@ -112,15 +146,16 @@
             <div class="flex flex-col items-center">
                 <div class="relative w-80 h-80 md:w-[450px] md:h-[450px] border-[16px] border-zinc-800 rounded-full shadow-[0_0_100px_rgba(217,119,6,0.3)] flex items-center justify-center bg-zinc-800">
                     <div id="wheel" class="spin-wheel w-full h-full rounded-full border-4 border-zinc-700 relative overflow-hidden" style="background: conic-gradient(#d97706 0deg 60deg, #92400e 60deg 120deg, #d97706 120deg 180deg, #92400e 180deg 240deg, #d97706 240deg 300deg, #92400e 300deg 360deg);">
-                        <div class="absolute inset-0 flex items-center justify-center font-black text-white text-[10px] md:text-sm tracking-tighter">
-                            <span class="absolute" style="transform: rotate(30deg) translateY(-140px);">TRY AGAIN</span>
-                            <span class="absolute" style="transform: rotate(90deg) translateY(-140px);">FREE PAPAD</span>
-                            <span class="absolute" style="transform: rotate(150deg) translateY(-140px);">₹ 20 CASHBACK</span>
-                            <span class="absolute" style="transform: rotate(210deg) translateY(-140px);">TRY AGAIN</span>
-                            <span class="absolute" style="transform: rotate(270deg) translateY(-140px);">FREE PAPAD</span>
-                            <span class="absolute" style="transform: rotate(330deg) translateY(-140px);">₹ 20 CASHBACK</span>
-                        </div>
-                    </div>
+                    <div id="wheel" class="spin-wheel w-full h-full rounded-full border-4 border-zinc-700 relative overflow-hidden" style="background: conic-gradient(#d97706 0deg 60deg, #92400e 60deg 120deg, #d97706 120deg 180deg, #92400e 180deg 240deg, #d97706 240deg 300deg, #92400e 300deg 360deg);">
+    <div class="wheel-text absolute inset-0 flex items-center justify-center font-black text-white tracking-tighter">
+        <span class="seg1">TRY AGAIN</span>
+        <span class="seg2">FREE PAPAD</span>
+        <span class="seg3">₹ 20 CASHBACK</span>
+        <span class="seg4">TRY AGAIN</span>
+        <span class="seg5">FREE PAPAD</span>
+        <span class="seg6">₹ 20 CASHBACK</span>
+    </div>
+</div>
                     <button onclick="spinWheel()" id="spinBtn" class="absolute z-30 bg-white text-zinc-900 font-black w-24 h-24 rounded-full shadow-2xl border-8 border-zinc-900 text-xl hover:scale-110 transition active:scale-95">SPIN</button>
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-12 bg-white rounded-b-full z-40 shadow-xl border-x-4 border-zinc-800"></div>
                 </div>
