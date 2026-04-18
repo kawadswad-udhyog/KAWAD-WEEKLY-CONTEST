@@ -3,81 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products | Kawad Swad Catalogue</title>
+    <title>Catalogue | Kawad Swad Udhyog</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700;900&family=Hind:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Playfair+Display:wght@700;900&family=Hind:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Hind', 'Poppins', sans-serif; background-color: #fffaf0; }
         .brand-font { font-family: 'Playfair Display', serif; }
+        .product-card { transition: transform 0.3s ease; border: 1px solid #fde68a; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
     </style>
 </head>
 <body class="text-gray-800">
 
-    <nav class="bg-white p-4 shadow-sm flex justify-between items-center px-6">
-        <a href="index.html" class="font-bold text-amber-600">← Back to Home</a>
-        <img src="logo.png" alt="Logo" class="w-12">
+    <nav class="bg-white p-4 shadow-md flex justify-between items-center px-6 sticky top-0 z-50">
+        <a href="index.html" class="font-bold text-amber-600 flex items-center gap-2"><span>←</span> HOME</a>
+        <div class="text-center">
+            <p class="text-[10px] font-bold text-amber-800 tracking-widest uppercase">Nimar, Madhya Pradesh</p>
+        </div>
+        <img src="logo.png" alt="Logo" class="w-10">
     </nav>
 
-    <header class="py-12 text-center bg-amber-600 text-white">
-        <h1 class="brand-font text-4xl md:text-6xl mb-2">Our Catalogue</h1>
-        <p class="italic">निमाड़ का असली स्वाद - ताज़ा और शुद्ध</p>
+    <header class="py-10 text-center bg-amber-600 text-white">
+        <h1 class="brand-font text-4xl md:text-5xl mb-1">Our Full Catalogue</h1>
+        <p class="italic text-sm opacity-90">निमाड़ का असली स्वाद - ताज़ा और शुद्ध</p>
     </header>
 
-    <section class="py-16 px-6 max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            
-            <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-amber-100">
-                <div class="h-56 bg-amber-50 flex items-center justify-center p-6">
-                    <img src="moong.png" alt="Moong Papad" class="max-h-full">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold text-amber-900 mb-2">Moong Papad</h3>
-                    <p class="text-sm text-gray-600 mb-4">Flavors: Green Chilli, Jeera, Garlic, Punjabi, Pudhina</p>
-                    <div class="flex flex-col gap-2">
-                        <a href="https://www.amazon.in/l/27943762031?me=ACMM6YLMRPEH1" class="bg-gray-900 text-white text-center py-2 rounded-xl font-bold text-sm">Buy on Amazon</a>
-                        <a href="https://wa.me/919630976867" class="border-2 border-green-600 text-green-600 text-center py-2 rounded-xl font-bold text-sm">WhatsApp Order</a>
-                    </div>
-                </div>
-            </div>
+    <main class="py-12 px-4 max-w-7xl mx-auto">
 
-            <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-amber-100">
-                <div class="h-56 bg-orange-50 flex items-center justify-center p-6">
-                    <img src="chana.png" alt="Chana Papad" class="max-h-full">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold text-amber-900 mb-2">Chana Papad</h3>
-                    <p class="text-sm text-gray-600 mb-4">Flavors: Garlic, Punjabi, Tomato, Khata Meetha</p>
-                    <div class="flex flex-col gap-2">
-                        <a href="https://meesho.com/papad-combo-pack-of-2-moong--chana--homemade-type-jain-papad--crispy--fresh/p/er636t" class="bg-pink-600 text-white text-center py-2 rounded-xl font-bold text-sm">Buy on Meesho</a>
-                        <a href="https://wa.me/919630976867" class="border-2 border-green-600 text-green-600 text-center py-2 rounded-xl font-bold text-sm">WhatsApp Order</a>
-                    </div>
-                </div>
+        <div class="mb-16">
+            <h2 class="text-2xl font-black text-green-700 mb-8 border-l-4 border-green-600 pl-4 uppercase">Moong Master Line</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <script>
+                    const moong = [
+                        { name: "Moong Master Papad", file: "MMP.png" },
+                        { name: "Moong Master Papad Jeera", file: "MMPJ.png" },
+                        { name: "Moong Master Papad Garlic", file: "MMPG.png" },
+                        { name: "Moong Master Papad Punjabi Masala", file: "MMPPM.png" },
+                        { name: "Moong Master Papad Khata Mitha", file: "MMPKM.png" },
+                        { name: "Moong Master Papad Pudhina", file: "MMPP.png" },
+                        { name: "Moong Master Papad Green Chilli", file: "MMPGC.png" }
+                    ];
+                    moong.forEach(p => {
+                        document.write(`
+                            <div class="product-card bg-white rounded-2xl p-4 flex flex-col items-center">
+                                <img src="${p.file}" alt="${p.name}" class="w-full h-auto rounded-xl mb-4">
+                                <h3 class="text-sm font-bold text-center mb-4 h-10 flex items-center">${p.name}</h3>
+                                <div class="w-full flex items-center gap-3">
+                                    <a href="https://wa.me/919630976867" class="flex-grow bg-green-600 text-white text-center py-2 rounded-lg font-bold text-xs">BUY NOW</a>
+                                    <div class="flex gap-2 opacity-40 grayscale hover:grayscale-0 transition cursor-help" title="Also available on Amazon & Meesho">
+                                        <span class="text-[10px] font-black">AMZ</span>
+                                        <span class="text-[10px] font-black">MSH</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `);
+                    });
+                </script>
             </div>
-
-            <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-amber-100">
-                <div class="h-56 bg-red-50 flex items-center justify-center p-6">
-                    <img src="urad.png" alt="Urad Papad" class="max-h-full">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold text-amber-900 mb-2">Urad Papad</h3>
-                    <p class="text-sm text-gray-600 mb-4">Classic Garlic Variant</p>
-                    <div class="flex flex-col gap-2">
-                        <a href="https://wa.me/919630976867" class="bg-green-600 text-white text-center py-2 rounded-xl font-bold text-sm">Direct Order</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </section>
 
-    <section class="bg-amber-900 text-white py-16 px-6 text-center">
-        <h2 class="text-3xl brand-font mb-4">Custom Papad Making</h2>
-        <p class="max-w-2xl mx-auto mb-8 opacity-80">We offer custom papad services at our Nimar unit. Bring your own ingredients or choose your spices—we make it exactly how you like it.</p>
-        <a href="https://wa.me/919630976867" class="bg-white text-amber-900 px-8 py-3 rounded-full font-bold">Inquire Now</a>
-    </section>
+        <div class="mb-16">
+            <h2 class="text-2xl font-black text-amber-600 mb-8 border-l-4 border-amber-600 pl-4 uppercase">Chana Chotu Papad Line</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <script>
+                    const chana = [
+                        { name: "Chana Chotu Papad", file: "CCP.png" },
+                        { name: "Chana Chotu Papad Khata Mitha", file: "CCPKM.png" },
+                        { name: "Chana Chotu Papad Garlic", file: "CCPG.png" },
+                        { name: "Chana Chotu Papad Punjabi Masala", file: "CCPPM.png" },
+                        { name: "Chana Chotu Papad Tomato", file: "CCPT.png" }
+                    ];
+                    chana.forEach(p => {
+                        document.write(`
+                            <div class="product-card bg-white rounded-2xl p-4 flex flex-col items-center">
+                                <img src="${p.file}" alt="${p.name}" class="w-full h-auto rounded-xl mb-4">
+                                <h3 class="text-sm font-bold text-center mb-4 h-10 flex items-center">${p.name}</h3>
+                                <div class="w-full flex items-center gap-3">
+                                    <a href="https://wa.me/919630976867" class="flex-grow bg-green-600 text-white text-center py-2 rounded-lg font-bold text-xs">BUY NOW</a>
+                                    <div class="flex gap-2 opacity-40 grayscale hover:grayscale-0 transition cursor-help">
+                                        <span class="text-[10px] font-black">AMZ</span>
+                                        <span class="text-[10px] font-black">MSH</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+        </div>
 
-    <footer class="py-10 text-center text-gray-400 text-xs">
-        © 2026 Kawad Swad Udhyog • Nimar, Madhya Pradesh
+        <div class="mb-16">
+            <h2 class="text-2xl font-black text-gray-700 mb-8 border-l-4 border-gray-600 pl-4 uppercase">Urad Guru Line</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <script>
+                    const urad = [
+                        { name: "Urad Guru Papad", file: "UGP.png" },
+                        { name: "Urad Guru Papad Garlic", file: "UGPG.png" }
+                    ];
+                    urad.forEach(p => {
+                        document.write(`
+                            <div class="product-card bg-white rounded-2xl p-4 flex flex-col items-center border-gray-200">
+                                <img src="${p.file}" alt="${p.name}" class="w-full h-auto rounded-xl mb-4">
+                                <h3 class="text-sm font-bold text-center mb-4 h-10 flex items-center">${p.name}</h3>
+                                <div class="w-full flex items-center gap-3">
+                                    <a href="https://wa.me/919630976867" class="flex-grow bg-green-600 text-white text-center py-2 rounded-lg font-bold text-xs">BUY NOW</a>
+                                    <div class="flex gap-2 opacity-40 grayscale hover:grayscale-0 transition cursor-help">
+                                        <span class="text-[10px] font-black">AMZ</span>
+                                        <span class="text-[10px] font-black">MSH</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+        </div>
+
+        <section class="bg-amber-900 text-white rounded-[2rem] p-8 text-center shadow-2xl">
+            <h2 class="text-3xl font-black mb-4 uppercase tracking-tighter italic underline">Papad Making Service</h2>
+            <p class="text-amber-200 mb-6 text-sm">Bring your own ingredients to our Nimar Unit. We handle Mixing, Rolling, and Sun-Drying.</p>
+            <a href="https://wa.me/919630976867" class="inline-block bg-white text-amber-900 px-10 py-3 rounded-full font-black shadow-xl">WHATSAPP FOR SERVICE</a>
+        </section>
+
+    </main>
+
+    <footer class="py-12 text-center text-gray-400 text-[10px] tracking-[0.3em] uppercase">
+        © 2026 KAWAD SWAD UDHYOG • NIMAR, MADHYA PRADESH
     </footer>
 
 </body>
