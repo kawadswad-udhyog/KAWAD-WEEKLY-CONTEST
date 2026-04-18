@@ -8,20 +8,14 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&family=Hind:wght@400;700&display=swap" rel="stylesheet">
     <style>
-                /* This moves the text closer to center on mobile and further on desktop */
-        .wheel-text span {
-            position: absolute;
-            transform-origin: center;
-            top: 50%;
-            left: 50%;
-        }
-        /* Mobile View (Small Screens) */
+        :root { --amber-deep: #d97706; --amber-light: #fffaf0; }
+        body { font-family: 'Hind', 'Poppins', sans-serif; background-color: var(--amber-light); scroll-behavior: smooth; overflow-x: hidden; }
+        .brand-font { font-family: 'Playfair Display', serif; }
+        
+        /* Wheel Text Logic */
+        .wheel-text span { position: absolute; transform-origin: center; top: 50%; left: 50%; }
         @media (max-width: 768px) {
-            .wheel-text span {
-                font-size: 8px; /* Smaller font for small wheel */
-                margin-top: -10px; /* Center alignment */
-            }
-            /* Adjust each segment position for mobile */
+            .wheel-text span { font-size: 8px; margin-top: -10px; }
             .seg1 { transform: translate(-50%, -50%) rotate(30deg) translateY(-85px); }
             .seg2 { transform: translate(-50%, -50%) rotate(90deg) translateY(-85px); }
             .seg3 { transform: translate(-50%, -50%) rotate(150deg) translateY(-85px); }
@@ -29,11 +23,8 @@
             .seg5 { transform: translate(-50%, -50%) rotate(270deg) translateY(-85px); }
             .seg6 { transform: translate(-50%, -50%) rotate(330deg) translateY(-85px); }
         }
-        /* Desktop View (Large Screens) */
         @media (min-width: 769px) {
-            .wheel-text span {
-                font-size: 14px;
-            }
+            .wheel-text span { font-size: 14px; }
             .seg1 { transform: translate(-50%, -50%) rotate(30deg) translateY(-140px); }
             .seg2 { transform: translate(-50%, -50%) rotate(90deg) translateY(-140px); }
             .seg3 { transform: translate(-50%, -50%) rotate(150deg) translateY(-140px); }
@@ -42,223 +33,166 @@
             .seg6 { transform: translate(-50%, -50%) rotate(330deg) translateY(-140px); }
         }
 
-        :root { --amber-deep: #d97706; --amber-light: #fffaf0; }
-        body { font-family: 'Hind', 'Poppins', sans-serif; background-color: var(--amber-light); scroll-behavior: smooth; overflow-x: hidden; }
-        .brand-font { font-family: 'Playfair Display', serif; }
-        .glass-effect { background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.3); }
         .spin-wheel { transition: transform 4s cubic-bezier(0.15, 0, 0.15, 1); filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)); }
         .animate-float { animation: float 4s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
         .animate-marquee { animation: marquee 30s linear infinite; }
         @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-        .lang-active { background: var(--amber-deep) !important; color: white !important; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3); }
-        .card-hover { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .card-hover:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(217, 119, 6, 0.2); }
+        .lang-active { background: var(--amber-deep) !important; color: white !important; }
+        .hero-bg { background: radial-gradient(circle at top right, #fef3c7, transparent), radial-gradient(circle at bottom left, #fff7ed, transparent); }
     </style>
 </head>
 <body class="text-gray-900">
 
-    <div class="bg-amber-700 py-3 overflow-hidden text-white font-bold text-xs md:text-sm uppercase tracking-[0.2em] shadow-md relative z-50">
+    <div class="bg-amber-700 py-3 overflow-hidden text-white font-bold text-xs md:text-sm uppercase tracking-[0.2em] shadow-md relative z-[110]">
         <div class="whitespace-nowrap animate-marquee flex gap-10">
             <span>🎉 Swad Bhara Safar | स्वाद भरा सफ़र 🎉</span>
-            <span>🔥 Nimar's Finest Moong & Chana Daily | निमाड़ के ताज़ा पापड़ 🔥</span>
+            <span>🔥 Nimar's Finest Moong & Chana Daily 🔥</span>
             <span>🎁 Join the Contest | कॉन्टेस्ट जीतें 🎁</span>
-            <span>✨ Custom Papad Making Services | कस्टम पापड़ मेकिंग ✨</span>
+            <span>✨ Zero Rice Used | शुद्ध मसाले ✨</span>
         </div>
     </div>
 
-    <header class="relative h-[80vh] md:h-[95vh] w-full overflow-hidden flex items-center justify-center">
-        <div class="absolute inset-0 z-0 pointer-events-none">
-            <iframe class="w-full h-full scale-[2.8] md:scale-[1.6]" src="https://www.youtube.com/embed/n61DDyHz-fY?autoplay=1&mute=1&loop=1&playlist=n61DDyHz-fY&controls=0&showinfo=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-amber-900/40"></div>
-        </div>
+    <nav class="fixed top-12 left-0 right-0 z-[100] p-3 md:p-5">
+        <div class="max-w-7xl mx-auto bg-white/90 backdrop-blur-lg rounded-[2rem] px-6 py-3 flex justify-between items-center shadow-xl border border-white/50">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo" class="w-10 md:w-12">
+                <div class="hidden sm:block">
+                    <p class="brand-font text-amber-900 font-black leading-none text-lg">Kawad Swad</p>
+                    <p class="text-[8px] uppercase tracking-[0.2em] text-amber-600 font-bold">Nimar's Heritage</p>
+                </div>
+            </div>
 
-        <div class="relative z-10 w-full max-w-6xl px-6">
-            <nav class="fixed top-0 left-0 right-0 z-[100] p-3 md:p-5">
-    <div class="max-w-7xl mx-auto bg-white/80 backdrop-blur-lg rounded-[2rem] px-6 py-3 flex justify-between items-center shadow-xl border border-white/50">
-        
-        <div class="flex items-center gap-3">
-            <img src="logo.png" alt="Logo" class="w-10 md:w-12 drop-shadow-sm">
-            <div class="hidden sm:block">
-                <p class="brand-font text-amber-900 font-black leading-none text-lg">Kawad Swad</p>
-                <p class="text-[8px] uppercase tracking-[0.2em] text-amber-600 font-bold">Nimar's Heritage</p>
+            <div class="hidden lg:flex items-center gap-8 text-[11px] font-black uppercase tracking-widest text-gray-500">
+                <a href="index.html" class="hover:text-amber-600 transition-colors">Home</a>
+                <a href="products.html" class="hover:text-amber-600 transition-colors">Catalogue</a>
+                <a href="about.html" class="hover:text-amber-600 transition-colors">About Us</a>
+                <a href="gallery.html" class="hover:text-amber-600 transition-colors">Gallery</a>
+                <a href="reviews.html" class="hover:text-amber-600 transition-colors">Reviews</a>
+                <a href="contact.html" class="hover:text-amber-600 transition-colors text-amber-700">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <a href="https://wa.me/919630976867" class="bg-green-600 text-white px-5 py-2.5 rounded-2xl text-[10px] font-black uppercase shadow-lg flex items-center gap-2">
+                    Order 💬
+                </a>
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-amber-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                </button>
             </div>
         </div>
 
-        <div class="hidden lg:flex items-center gap-8 text-[11px] font-black uppercase tracking-widest text-gray-500">
-            <a href="index.html" class="hover:text-amber-600 transition-colors">Home</a>
-            <a href="products.html" class="hover:text-amber-600 transition-colors">Catalogue</a>
-            <a href="about.html" class="hover:text-amber-600 transition-colors">About Us</a>
-            <a href="gallery.html" class="hover:text-amber-600 transition-colors">Gallery</a>
-            <a href="reviews.html" class="hover:text-amber-600 transition-colors">Reviews</a>
-            <a href="contact.html" class="hover:text-amber-600 transition-colors text-amber-700">Contact</a>
+        <div id="mobile-menu" class="hidden lg:hidden mt-2 bg-white/95 backdrop-blur-md rounded-[2rem] p-6 shadow-2xl border border-amber-100">
+            <div class="grid grid-cols-2 gap-4 text-center text-[10px] font-black uppercase tracking-widest">
+                <a href="index.html" class="p-4 bg-amber-50 rounded-2xl">Home</a>
+                <a href="products.html" class="p-4 bg-amber-50 rounded-2xl">Catalogue</a>
+                <a href="about.html" class="p-4 bg-amber-50 rounded-2xl">About</a>
+                <a href="gallery.html" class="p-4 bg-amber-50 rounded-2xl">Gallery</a>
+                <a href="reviews.html" class="p-4 bg-amber-50 rounded-2xl">Reviews</a>
+                <a href="contact.html" class="p-4 bg-amber-600 text-white rounded-2xl">Contact</a>
+            </div>
         </div>
+    </nav>
 
-        <div class="flex items-center gap-2">
-            <a href="https://wa.me/919630976867" class="bg-green-600 text-white px-5 py-2.5 rounded-2xl text-[10px] font-black uppercase shadow-lg hover:bg-green-700 transition-all active:scale-95 flex items-center gap-2">
-                <span class="hidden md:inline">Order Now</span> 💬
-            </a>
-            
-            <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-amber-900">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
-        </div>
-    </div>
+    <header class="relative pt-48 pb-20 px-6 hero-bg overflow-hidden min-h-[90vh] flex items-center">
+        <div class="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+        
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10 w-full">
+            <div class="text-center lg:text-left">
+                <div class="inline-flex rounded-md bg-amber-100 p-1 text-[10px] font-bold text-amber-800 mb-6">
+                    <button onclick="setLang('en')" id="btn-en" class="px-4 py-1.5 rounded-md transition-all uppercase">EN</button>
+                    <button onclick="setLang('hi')" id="btn-hi" class="px-4 py-1.5 rounded-md transition-all lang-active uppercase">HI</button>
+                </div>
+                <h1 class="brand-font text-6xl md:text-8xl text-amber-900 mb-6 font-black italic leading-tight">
+                    Kawad Swad <br> <span class="text-amber-600">Udhyog</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 font-bold italic mb-10" id="tagline">"स्वाद भरा सफ़र"</p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                    <a href="products.html" class="bg-amber-600 text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-xs shadow-xl hover:scale-105 transition-all">Explore Catalogue</a>
+                    <a href="#contest" class="bg-white text-amber-900 border-2 border-amber-100 px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-amber-50 transition-all">Play & Win 🎯</a>
+                </div>
+            </div>
 
-    <div id="mobile-menu" class="hidden lg:hidden mt-2 glass-effect rounded-[2rem] p-6 shadow-2xl animate-in slide-in-from-top duration-300">
-        <div class="grid grid-cols-2 gap-4 text-center text-[10px] font-black uppercase tracking-widest">
-            <a href="index.html" class="p-4 bg-white/50 rounded-2xl">Home</a>
-            <a href="products.html" class="p-4 bg-white/50 rounded-2xl">Catalogue</a>
-            <a href="about.html" class="p-4 bg-white/50 rounded-2xl">About</a>
-            <a href="gallery.html" class="p-4 bg-white/50 rounded-2xl">Gallery</a>
-            <a href="reviews.html" class="p-4 bg-white/50 rounded-2xl">Reviews</a>
-            <a href="contact.html" class="p-4 bg-amber-600 text-white rounded-2xl">Contact</a>
-        </div>
-    </div>
-</nav>
-
-<div class="h-24"></div>
-
-<script>
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
-    }
-</script>
-
-            <div class="text-center">
-                <img src="logo.png" alt="Logo" class="mx-auto w-32 md:w-48 mb-8 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] animate-pulse">
-                <h1 class="brand-font text-5xl md:text-8xl text-white mb-4 drop-shadow-2xl font-black italic tracking-tighter">Kawad Swad</h1>
-                <p class="text-xl md:text-3xl text-amber-400 font-bold italic mb-12" id="tagline">"स्वाद भरा सफ़र"</p>
-                <a href="#contest" class="inline-flex items-center gap-3 bg-amber-600 text-white px-10 py-5 rounded-full font-black text-sm uppercase tracking-widest hover:scale-110 transition-transform shadow-[0_15px_30px_rgba(217,119,6,0.4)]">
-                    <span id="scroll-text">नीचे स्क्रॉल करें और जीतें!</span> 🎯
-                </a>
+            <div class="relative flex justify-center items-center">
+                <div class="absolute inset-0 bg-amber-400 blur-[120px] opacity-20 animate-pulse"></div>
+                <img src="mascot3.png" alt="Mascot" class="w-full max-w-sm md:max-w-md animate-float drop-shadow-2xl relative z-10">
+                <div class="absolute -bottom-5 -right-5 bg-white p-6 rounded-[2rem] shadow-2xl border border-amber-100 hidden md:block z-20">
+                    <p class="text-[10px] font-black text-amber-600 uppercase mb-1">Purity Guaranteed</p>
+                    <p class="text-xl font-black text-gray-800 tracking-tighter">0% RICE USED</p>
+                </div>
             </div>
         </div>
     </header>
+
+    <section class="py-12 bg-white border-y border-amber-100">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center"><div class="text-4xl mb-2">☀️</div><p class="text-[10px] font-black uppercase tracking-widest text-gray-400">Sun Dried</p></div>
+            <div class="text-center"><div class="text-4xl mb-2">🏭</div><p class="text-[10px] font-black uppercase tracking-widest text-gray-400">Direct Factory</p></div>
+            <div class="text-center"><div class="text-4xl mb-2">🌿</div><p class="text-[10px] font-black uppercase tracking-widest text-gray-400">Pure Spices</p></div>
+            <div class="text-center"><div class="text-4xl mb-2">🤝</div><p class="text-[10px] font-black uppercase tracking-widest text-gray-400">Family Owned</p></div>
+        </div>
+    </section>
 
     <section class="py-24 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
         <div class="order-2 lg:order-1">
             <h2 class="text-5xl brand-font mb-6 text-amber-900 font-black italic" id="about-title">हमारे बारे में</h2>
             <p class="text-amber-600 font-black text-xl mb-6 tracking-wide" id="about-loc">निमाड़, मध्य प्रदेश की माटी का असली स्वाद।</p>
-            <p class="text-gray-600 leading-relaxed text-lg mb-10 font-medium" id="about-p1">
-                Kawad Swad Udhyog एक पारिवारिक व्यवसाय है। हम हर दिन ताज़ा पापड़ तैयार करते हैं। हम एक स्थानीय यूनिट हैं जहाँ तैयारी, मिक्सिंग और सुखाने का काम रोज़ाना हमारी अपनी निगरानी में होता है।
-            </p>
-            
-            <div class="space-y-4 mb-12">
-                <div class="flex items-center gap-4 bg-white p-5 rounded-3xl shadow-sm border border-amber-100 card-hover">
-                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold">✓</div>
-                    <p class="font-bold text-gray-700" id="feat1">रोज़ाना ताज़ा उत्पादन (Daily Fresh)</p>
-                </div>
-                <div class="flex items-center gap-4 bg-white p-5 rounded-3xl shadow-sm border border-amber-100 card-hover">
-                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600 font-bold">✓</div>
-                    <p class="font-bold text-gray-700" id="feat2">साफ़-सफाई का पूरा ध्यान (Hygienic)</p>
-                </div>
-            </div>
-
+            <p class="text-gray-600 leading-relaxed text-lg mb-10 font-medium" id="about-p1">Kawad Swad Udhyog एक पारिवारिक व्यवसाय है। हम हर दिन ताज़ा पापड़ तैयार करते हैं। हम एक स्थानीय यूनिट हैं जहाँ तैयारी, मिक्सिंग और सुखाने का काम रोज़ाना हमारी अपनी निगरानी में होता है।</p>
             <div class="p-8 bg-zinc-900 rounded-[2.5rem] text-amber-400 shadow-2xl relative overflow-hidden group">
                 <p class="italic text-xl font-bold z-10 relative leading-relaxed" id="mission-box">"हमारा लक्ष्य हर घर तक शुद्ध, ताज़ा और स्वादिष्ट पापड़ पहुँचाना है। फ़ैक्टरी से सीधा आपके घर तक।"</p>
                 <div class="absolute -right-10 -bottom-10 opacity-10 text-[12rem] group-hover:rotate-12 transition-transform">😋</div>
             </div>
         </div>
-        
-        <div class="order-1 lg:order-2 relative">
-            <div class="absolute inset-0 bg-amber-200 blur-[100px] opacity-30"></div>
-            <div class="relative bg-white/50 backdrop-blur-md rounded-[4rem] p-12 border border-white text-center shadow-xl">
-                <img src="mascot3.png" alt="Mascot" class="w-64 mx-auto animate-float drop-shadow-2xl mb-10">
-                <div class="bg-amber-900 text-white p-8 rounded-3xl shadow-inner">
-                    <h3 class="font-black text-2xl mb-6 uppercase tracking-widest text-amber-400" id="time-title">Timings</h3>
-                    <div class="space-y-4 text-xl font-bold">
-                        <p class="opacity-70 text-sm">Mon - Sat</p>
-                        <p class="text-3xl text-white">9:00 AM - 1:00 PM</p>
-                        <p class="text-3xl text-white">3:00 PM - 7:00 PM</p>
-                        <div class="h-px bg-amber-800 my-4"></div>
-                        <p class="text-sm text-amber-500 italic" id="sun-text">Sunday: On Request Only</p>
-                    </div>
+        <div class="order-1 lg:order-2 bg-white rounded-[4rem] p-12 text-center shadow-xl border border-amber-50">
+            <img src="mascot2.png" alt="Mascot" class="w-64 mx-auto animate-float mb-10">
+            <div class="bg-amber-900 text-white p-8 rounded-3xl shadow-inner">
+                <h3 class="font-black text-2xl mb-6 uppercase tracking-widest text-amber-400" id="time-title">Timings</h3>
+                <div class="space-y-4 text-xl font-bold">
+                    <p class="opacity-70 text-sm">Mon - Sat</p>
+                    <p class="text-3xl">9:00 AM - 1:00 PM</p>
+                    <p class="text-3xl">3:00 PM - 7:00 PM</p>
+                    <p class="text-xs text-amber-500 italic" id="sun-text">Sunday: On Request Only</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="contest" class="py-24 bg-zinc-900 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
         <div class="max-w-4xl mx-auto px-6 relative z-10">
             <h2 class="text-5xl brand-font mb-16 text-center text-white font-black italic" id="game-title">साप्ताहिक लकी ड्रा</h2>
-            
             <div class="flex flex-col items-center">
                 <div class="relative w-80 h-80 md:w-[450px] md:h-[450px] border-[16px] border-zinc-800 rounded-full shadow-[0_0_100px_rgba(217,119,6,0.3)] flex items-center justify-center bg-zinc-800">
                     <div id="wheel" class="spin-wheel w-full h-full rounded-full border-4 border-zinc-700 relative overflow-hidden" style="background: conic-gradient(#d97706 0deg 60deg, #92400e 60deg 120deg, #d97706 120deg 180deg, #92400e 180deg 240deg, #d97706 240deg 300deg, #92400e 300deg 360deg);">
-                    <div id="wheel" class="spin-wheel w-full h-full rounded-full border-4 border-zinc-700 relative overflow-hidden" style="background: conic-gradient(#d97706 0deg 60deg, #92400e 60deg 120deg, #d97706 120deg 180deg, #92400e 180deg 240deg, #d97706 240deg 300deg, #92400e 300deg 360deg);">
-    <div class="wheel-text absolute inset-0 flex items-center justify-center font-black text-white tracking-tighter">
-        <span class="seg1">TRY AGAIN</span>
-        <span class="seg2">FREE PAPAD</span>
-        <span class="seg3">₹ 20 CASHBACK</span>
-        <span class="seg4">TRY AGAIN</span>
-        <span class="seg5">FREE PAPAD</span>
-        <span class="seg6">₹ 20 CASHBACK</span>
-    </div>
-</div>
+                        <div class="wheel-text absolute inset-0 flex items-center justify-center font-black text-white tracking-tighter">
+                            <span class="seg1">TRY AGAIN</span><span class="seg2">FREE PAPAD</span><span class="seg3">₹ 20 CASHBACK</span>
+                            <span class="seg4">TRY AGAIN</span><span class="seg5">FREE PAPAD</span><span class="seg6">₹ 20 CASHBACK</span>
+                        </div>
+                    </div>
                     <button onclick="spinWheel()" id="spinBtn" class="absolute z-30 bg-white text-zinc-900 font-black w-24 h-24 rounded-full shadow-2xl border-8 border-zinc-900 text-xl hover:scale-110 transition active:scale-95">SPIN</button>
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-12 bg-white rounded-b-full z-40 shadow-xl border-x-4 border-zinc-800"></div>
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-12 bg-white rounded-b-full z-40 border-x-4 border-zinc-800"></div>
                 </div>
                 <p id="spinResult" class="mt-12 font-black text-2xl text-amber-500 h-10 text-center"></p>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 max-w-4xl mx-auto">
-        <div class="bg-white rounded-[3rem] p-10 md:p-16 shadow-xl border border-amber-100 relative">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-600 text-white px-8 py-3 rounded-full font-black text-sm uppercase tracking-widest shadow-lg">
-                Rules
-            </div>
-            <h3 class="brand-font text-4xl text-amber-900 mb-12 text-center font-black italic">भाग लेने के नियम</h3>
-            <div class="space-y-8">
-                <div class="flex gap-6 items-start group">
-                    <div class="bg-amber-100 text-amber-700 w-14 h-14 rounded-3xl flex items-center justify-center font-black text-2xl shrink-0 group-hover:bg-amber-600 group-hover:text-white transition-all">1</div>
-                    <p class="text-lg font-bold text-gray-700 pt-3"><strong>पापड़ खरीदें (Purchase):</strong> इनाम पाने के लिए आपका कवाड़ स्वाद पापड़ का ग्राहक होना ज़रूरी है।</p>
-                </div>
-                <div class="flex gap-6 items-start group">
-                    <div class="bg-amber-100 text-amber-700 w-14 h-14 rounded-3xl flex items-center justify-center font-black text-2xl shrink-0 group-hover:bg-amber-600 group-hover:text-white transition-all">2</div>
-                    <p class="text-lg font-bold text-gray-700 pt-3"><strong>फॉर्म भरें (Fill Form):</strong> नीचे दिए गए बटन पर क्लिक करके अपनी जानकारी भरें।</p>
-                </div>
-                <div class="flex gap-6 items-start group">
-                    <div class="bg-amber-100 text-amber-700 w-14 h-14 rounded-3xl flex items-center justify-center font-black text-2xl shrink-0 group-hover:bg-amber-600 group-hover:text-white transition-all">3</div>
-                    <p class="text-lg font-bold text-gray-700 pt-3"><strong>फॉलो करें (Follow):</strong> हमें Instagram और YouTube पर फॉलो करना अनिवार्य है।</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <footer class="bg-zinc-950 text-white py-24 px-6 text-center border-t-8 border-amber-600">
-        <img src="logo.png" alt="Logo" class="w-24 mx-auto mb-10 opacity-80">
+    <footer class="bg-zinc-950 text-white py-24 px-6 text-center border-t-8 border-amber-600">
         <h4 class="brand-font text-5xl text-amber-500 mb-4 italic font-black">Kawad Swad Udhyog</h4>
-        <p class="text-gray-500 mb-12 font-bold tracking-[0.4em] uppercase">Nimar, Madhya Pradesh</p>
-        
-        <div class="flex flex-wrap justify-center gap-6 mb-20">
-            <a href="tel:9630976867" class="bg-white text-zinc-900 px-10 py-5 rounded-2xl font-black hover:bg-amber-500 hover:text-white transition shadow-lg">📞 Call Now</a>
-            <a href="https://wa.me/919630976867" class="bg-green-600 text-white px-10 py-5 rounded-2xl font-black hover:bg-green-500 transition shadow-lg">💬 WhatsApp</a>
-        </div>
-        
-        <div class="max-w-md mx-auto mb-8 bg-zinc-900 p-8 rounded-[2.5rem] border border-zinc-800 shadow-inner">
+        <div class="max-w-md mx-auto mb-12 bg-zinc-900 p-8 rounded-[2.5rem] border border-zinc-800 shadow-inner">
             <p class="text-[10px] text-amber-500 font-black uppercase tracking-widest mb-3">Factory Location</p>
-            
             <p class="text-xl font-bold text-white mb-2">Katargaon</p>
-            <p class="text-sm text-gray-400 italic mb-6">Nimar, Madhya Pradesh</p>
-            
-            <div class="h-px bg-zinc-800 w-1/2 mx-auto mb-6"></div>
-            
-            <a href="https://maps.google.com/?q=Katargaon+Nimar+Madhya+Pradesh" target="_blank" class="inline-flex items-center gap-2 text-amber-500 hover:text-white transition-colors font-bold text-sm">
-                <span>📍 View on Google Maps</span>
-            </a>
+            <p class="text-sm text-gray-400 italic">Nimar, Madhya Pradesh</p>
+            <a href="https://maps.google.com/?q=Katargaon+Nimar+Madhya+Pradesh" target="_blank" class="inline-block mt-6 text-amber-500 font-bold text-sm">📍 View on Google Maps</a>
         </div>
-
-        <p class="text-[10px] text-gray-700 tracking-[0.5em] uppercase font-black italic mt-12">© 2026 KAWAD SWAD UDHYOG • स्वाद भरा सफ़र</p>
+        <div class="flex flex-wrap justify-center gap-6 mb-12">
+            <a href="tel:9630976867" class="bg-white text-zinc-900 px-10 py-4 rounded-2xl font-black">📞 Call</a>
+            <a href="https://wa.me/919630976867" class="bg-green-600 text-white px-10 py-4 rounded-2xl font-black">💬 WhatsApp</a>
+        </div>
+        <p class="text-[10px] text-gray-700 tracking-[0.5em] uppercase font-black italic">© 2026 KAWAD SWAD UDHYOG</p>
     </footer>
 
-    <div class="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-xl border-t border-gray-100 flex gap-4 lg:hidden z-50">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform" class="flex-1 bg-amber-600 text-white text-center py-5 rounded-3xl font-black shadow-[0_-10px_30px_rgba(217,119,6,0.3)] uppercase tracking-widest text-sm" id="sticky-btn">Join Contest Now</a>
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-xl border-t lg:hidden z-50">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUk2Ta-PbxvVmDXzQ_0tESjehJ4y-2unPIi8mQd-JdqQUzeQ/viewform" class="block w-full bg-amber-600 text-white text-center py-4 rounded-3xl font-black uppercase tracking-widest text-sm" id="sticky-btn">Join Contest Now</a>
     </div>
 
     <script>
@@ -281,7 +215,6 @@
 
         function setLang(lang) {
             document.getElementById('tagline').innerText = data[lang].tagline;
-            document.getElementById('scroll-text').innerText = data[lang].scrollText;
             document.getElementById('about-title').innerText = data[lang].aboutTitle;
             document.getElementById('about-loc').innerText = data[lang].aboutLoc;
             document.getElementById('about-p1').innerText = data[lang].aboutP1;
@@ -292,6 +225,8 @@
             document.getElementById('btn-en').classList.toggle('lang-active', lang === 'en');
             document.getElementById('btn-hi').classList.toggle('lang-active', lang === 'hi');
         }
+
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
 
         function spinWheel() {
             const wheel = document.getElementById('wheel');
