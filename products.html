@@ -1,21 +1,24 @@
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R5YNWTG2MC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-R5YNWTG2MC');
-</script>
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5YNWTG2MC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R5YNWTG2MC');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Shop | Kawad Swad Udhyog</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Playfair+Display:wght@700;900&family=Hind:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', 'Hind', sans-serif; background-color: #fdfaf5; scroll-behavior: smooth; }
-        .brand-font { font-family: 'Playfair Display', serif; }
+        :root { --amber-deep: #d97706; --amber-light: #fffaf0; }
+        body { font-family: 'Poppins', 'Hind', sans-serif; background-color: var(--amber-light); scroll-behavior: smooth; }
+        .brand-font { font-family: 'Playfair Display', serif; font-style: normal; }
+        
         .product-card { 
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
             background: white;
@@ -31,26 +34,24 @@
             content: ''; position: absolute; bottom: -8px; left: 0; 
             width: 40px; height: 4px; background: #d97706; border-radius: 2px;
         }
-        .btn-whatsapp { background: #25D366; transition: all 0.3s ease; }
-        .btn-whatsapp:hover { background: #128C7E; transform: scale(1.02); }
     </style>
 </head>
 <body class="text-gray-900">
 
     <nav class="fixed top-0 left-0 right-0 z-[100] p-4">
-        <div class="max-w-7xl mx-auto bg-white/90 backdrop-blur-lg rounded-2xl px-6 py-3 flex justify-between items-center shadow-lg border border-white/50">
+        <div class="max-w-7xl mx-auto bg-white/90 backdrop-blur-lg rounded-[2rem] px-6 py-3 flex justify-between items-center shadow-xl border border-white/50">
             <div class="flex items-center gap-3">
-                <img src="logo.png" alt="Logo" class="w-10">
+                <img src="logo.png" alt="Logo" class="w-10 md:w-12">
                 <div class="hidden sm:block">
-                    <p class="brand-font text-amber-900 font-black leading-none">Kawad Swad</p>
+                    <p class="brand-font text-amber-900 font-black leading-none uppercase">Kawad Swad</p>
                     <p class="text-[7px] uppercase tracking-widest text-amber-600 font-bold">Nimar's Heritage</p>
                 </div>
             </div>
-            <div class="flex gap-5 items-center text-[10px] font-black uppercase tracking-widest">
-                <a href="index.html" class="text-gray-500 hover:text-amber-600">Home</a>
-                <a href="bulk.html" class="text-gray-500 hover:text-amber-600">Bulk Inquiry</a>
-                <a href="gallery.html" class="text-gray-500 hover:text-amber-600">Gallery</a>
-                <a href="https://wa.me/919630976867" class="bg-amber-600 text-white px-5 py-2.5 rounded-xl shadow-lg">Order 💬</a>
+            <div class="flex gap-5 items-center text-[10px] font-black uppercase tracking-widest text-gray-500">
+                <a href="index.html" class="hover:text-amber-600 transition">Home</a>
+                <a href="bulk.html" class="hover:text-amber-600 transition">Bulk Inquiry</a>
+                <a href="gallery.html" class="hover:text-amber-600 transition">Gallery</a>
+                <a href="https://wa.me/919630976867" class="bg-amber-600 text-white px-5 py-2.5 rounded-xl shadow-lg hover:scale-105 transition">Order 💬</a>
             </div>
         </div>
     </nav>
@@ -58,15 +59,29 @@
     <header class="pt-32 pb-16 text-center bg-amber-900 text-white relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
         <div class="relative z-10 px-6">
-            <h1 class="brand-font text-5xl md:text-7xl mb-4 font-black italic">Our Swad Gallery</h1>
-            <p class="italic text-amber-400 font-bold tracking-[0.2em] text-xs uppercase">Authentic Recipes • Zero Rice • Nimar Heritage</p>
+            <h1 class="brand-font text-5xl md:text-7xl mb-4 font-black uppercase">Our Swad Gallery</h1>
+            <p class="text-amber-400 font-black tracking-[0.2em] text-[10px] uppercase">Authentic Recipes • Zero Rice • Nimar Heritage</p>
         </div>
     </header>
 
     <main class="py-16 px-6 max-w-7xl mx-auto">
 
+        <section class="mb-20 bg-white p-8 rounded-[3rem] border border-amber-100 shadow-sm text-center">
+            <p class="text-[10px] font-black text-amber-600 uppercase tracking-widest mb-4">Fastest Delivery via</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="https://www.amazon.in/l/27943762031?me=ACMM6YLMRPEH1" target="_blank" class="flex items-center gap-2 bg-zinc-100 px-6 py-2 rounded-full hover:bg-zinc-200 transition">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" class="h-4">
+                    <span class="text-[10px] font-black uppercase">Storefront</span>
+                </a>
+                <a href="https://meesho.com/papad-combo-pack-of-2-moong--chana--homemade-type-jain-papad--crispy--fresh/p/er636t" target="_blank" class="flex items-center gap-2 bg-pink-50 px-6 py-2 rounded-full hover:bg-pink-100 transition">
+                    <span class="text-pink-600 font-black text-sm italic">meesho</span>
+                    <span class="text-[10px] font-black uppercase text-pink-600">Combo Store</span>
+                </a>
+            </div>
+        </section>
+
         <div class="mb-24">
-            <h2 class="section-title text-3xl font-black text-amber-900 mb-12 italic">Moong Master Line</h2>
+            <h2 class="section-title text-3xl font-black text-amber-900 mb-12 uppercase">Moong Master Line</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <script>
                     const moong = [
@@ -82,9 +97,9 @@
                                 <div class="w-full h-56 flex items-center justify-center overflow-hidden rounded-3xl bg-amber-50/50 mb-6">
                                     <img src="${p.file}" alt="${p.name}" class="max-h-40 hover:scale-110 transition duration-500 drop-shadow-xl">
                                 </div>
-                                <h3 class="text-lg font-black text-center mb-6 text-gray-800 italic">${p.name}</h3>
-                                <a href="https://wa.me/919630976867?text=Hi, I want to order ${p.name}" class="btn-whatsapp w-full text-white text-center py-4 rounded-2xl font-black text-[10px] tracking-widest uppercase shadow-lg">
-                                    BUY VIA WHATSAPP
+                                <h3 class="text-lg font-black text-center mb-6 text-gray-800 uppercase tracking-tighter">${p.name}</h3>
+                                <a href="https://wa.me/919630976867?text=Hi, I want to order ${p.name}" class="w-full bg-green-600 text-white text-center py-4 rounded-2xl font-black text-[10px] tracking-widest uppercase shadow-lg hover:bg-green-700 transition">
+                                    BUY VIA WHATSAPP 💬
                                 </a>
                             </div>
                         `);
@@ -94,7 +109,7 @@
         </div>
 
         <div class="mb-24">
-            <h2 class="section-title text-3xl font-black text-amber-900 mb-12 italic">Chana Chotu Line</h2>
+            <h2 class="section-title text-3xl font-black text-amber-900 mb-12 uppercase">Chana Chotu Line</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <script>
                     const chana = [
@@ -108,9 +123,9 @@
                                 <div class="w-full h-56 flex items-center justify-center overflow-hidden rounded-3xl bg-amber-50/50 mb-6">
                                     <img src="${p.file}" alt="${p.name}" class="max-h-40 hover:scale-110 transition duration-500 drop-shadow-xl">
                                 </div>
-                                <h3 class="text-lg font-black text-center mb-6 text-gray-800 italic">${p.name}</h3>
-                                <a href="https://wa.me/919630976867?text=Hi, I want to order ${p.name}" class="btn-whatsapp w-full text-white text-center py-4 rounded-2xl font-black text-[10px] tracking-widest uppercase shadow-lg">
-                                    BUY VIA WHATSAPP
+                                <h3 class="text-lg font-black text-center mb-6 text-gray-800 uppercase tracking-tighter">${p.name}</h3>
+                                <a href="https://wa.me/919630976867?text=Hi, I want to order ${p.name}" class="w-full bg-green-600 text-white text-center py-4 rounded-2xl font-black text-[10px] tracking-widest uppercase shadow-lg hover:bg-green-700 transition">
+                                    BUY VIA WHATSAPP 💬
                                 </a>
                             </div>
                         `);
@@ -120,32 +135,32 @@
         </div>
 
         <div class="mb-24">
-            <h2 class="section-title text-3xl font-black text-amber-900 mb-12 italic">Premium Seasonings</h2>
+            <h2 class="section-title text-3xl font-black text-amber-900 mb-12 uppercase">Premium Seasonings</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="product-card rounded-[3rem] p-8 flex flex-col items-center bg-zinc-900 text-white border-zinc-800">
+                <div class="product-card rounded-[3rem] p-8 flex flex-col items-center bg-zinc-900 text-white border-zinc-800 group">
                     <div class="w-full h-64 bg-zinc-800 rounded-[2rem] mb-6 flex items-center justify-center overflow-hidden">
-                        <img src="KBGM.png" alt="Black Gold" class="max-h-52 hover:scale-110 transition duration-500">
+                        <img src="KBGM.png" alt="Black Gold" class="max-h-52 group-hover:scale-110 transition duration-500">
                     </div>
-                    <h3 class="text-2xl font-black text-center mb-2 italic">Black Gold Masala</h3>
+                    <h3 class="text-2xl font-black text-center mb-2 uppercase tracking-tighter">Black Gold Masala</h3>
                     <p class="text-amber-500 text-[10px] font-black uppercase tracking-widest mb-8">Nimar's Finest Seasoning</p>
-                    <a href="https://wa.me/919630976867?text=Order+Black+Gold+Masala" class="btn-whatsapp w-full text-white text-center py-5 rounded-2xl font-black text-[10px] tracking-widest uppercase">ORDER ON WHATSAPP</a>
+                    <a href="https://wa.me/919630976867?text=Order+Black+Gold+Masala" class="w-full bg-amber-600 text-white text-center py-5 rounded-2xl font-black text-[10px] tracking-widest uppercase">ORDER ON WHATSAPP</a>
                 </div>
 
-                <div class="product-card rounded-[3rem] p-8 flex flex-col items-center bg-red-950 text-white border-red-900">
+                <div class="product-card rounded-[3rem] p-8 flex flex-col items-center bg-red-950 text-white border-red-900 group">
                     <div class="w-full h-64 bg-red-900/20 rounded-[2rem] mb-6 flex items-center justify-center overflow-hidden">
-                        <img src="KLCM.png" alt="Lal Cht Masala" class="max-h-52 hover:scale-110 transition duration-500">
+                        <img src="KLCM.png" alt="Lal Cht Masala" class="max-h-52 group-hover:scale-110 transition duration-500">
                     </div>
-                    <h3 class="text-2xl font-black text-center mb-2 italic">Lal Cht Masala</h3>
+                    <h3 class="text-2xl font-black text-center mb-2 uppercase tracking-tighter">Lal Cht Masala</h3>
                     <p class="text-red-400 text-[10px] font-black uppercase tracking-widest mb-8">Authentic Spiced Zest</p>
-                    <a href="https://wa.me/919630976867?text=Order+Lal+Cht+Masala" class="btn-whatsapp w-full text-white text-center py-5 rounded-2xl font-black text-[10px] tracking-widest uppercase">ORDER ON WHATSAPP</a>
+                    <a href="https://wa.me/919630976867?text=Order+Lal+Cht+Masala" class="w-full bg-amber-600 text-white text-center py-5 rounded-2xl font-black text-[10px] tracking-widest uppercase">ORDER ON WHATSAPP</a>
                 </div>
             </div>
         </div>
 
         <section class="bg-amber-100 rounded-[3rem] p-10 md:p-16 text-center border-2 border-dashed border-amber-300">
-            <h2 class="brand-font text-4xl font-black mb-6 text-amber-900 italic">Papad Making Service</h2>
+            <h2 class="brand-font text-4xl font-black mb-6 text-amber-900 uppercase">Papad Making Service</h2>
             <p class="text-amber-800 mb-10 font-medium max-w-2xl mx-auto">निमाड़ की बेहतरीन सर्विस: आप आटा लाएं, हम बनाएंगे बेहतरीन पापड़। Mixing, Rolling, and Sun-Drying managed by experts.</p>
-            <a href="https://wa.me/919630976867?text=Inquiry+about+Papad+Making+Service" class="inline-block bg-amber-900 text-amber-400 px-12 py-4 rounded-full font-black text-xs uppercase tracking-widest shadow-xl">Start Custom Order</a>
+            <a href="https://wa.me/919630976867?text=Hi, I am interested in your Service" class="inline-block bg-amber-900 text-amber-400 px-12 py-4 rounded-full font-black text-[10px] uppercase tracking-widest shadow-xl hover:scale-110 transition">Start Custom Order 🚀</a>
         </section>
 
     </main>
@@ -154,10 +169,10 @@
         <div class="max-w-xs mx-auto mb-10">
             <div class="inline-flex flex-col items-center px-8 py-4 rounded-3xl bg-zinc-900 border border-zinc-800 shadow-2xl">
                 <p class="text-[8px] font-black uppercase tracking-[0.4em] text-amber-500 mb-2">FSSAI License No.</p>
-                <p class="text-sm font-black text-white tracking-[0.2em]">21425890001224</p>
+                <p class="text-sm font-black text-white tracking-widest">21425890001224</p>
             </div>
         </div>
-        <p class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 italic">© 2026 KAWAD SWAD UDHYOG • स्वाद भरा सफ़र</p>
+        <p class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 italic">© 2026 KAWAD SWAD UDHYOG • स्वाद भरा सफ़र</p>
     </footer>
 
 </body>
